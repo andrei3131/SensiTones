@@ -1,1 +1,1 @@
-bash ./script.sh | lein repl 
+bash ./script.sh | lein.sh repl 

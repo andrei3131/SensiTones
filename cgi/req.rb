@@ -1,9 +1,8 @@
 require 'net/http'
 
 request_text = ""
-path = "/home/andrei-octavian/Hack/ICHack/cgi/"
 
-file = File.new(path << "reqbuffer.txt", "r")
+file = File.new("reqbuffer.txt", "r")
 while (line = file.gets)
     request_text << line
 end
