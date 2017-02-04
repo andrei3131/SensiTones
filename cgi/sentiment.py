@@ -11,7 +11,7 @@ def post_request_string(str):
 
     request_script = subprocess.Popen(['ruby', 'req.rb'],
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE)
+        stderr=subprocess.PIPE) 
     out, err = request_script.communicate()
 
     return out

@@ -16,6 +16,6 @@ chatApp.controller('mainController', function($scope) {
         
         $scope.messages.push($scope.newPost);
         $scope.myMessage = "";
-        //$.post("http://127.0.0.1:3600", x);
+        $.post("http://127.0.0.1:3600", $scope.newPost);
     }
 });
