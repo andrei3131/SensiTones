@@ -80,7 +80,7 @@
 
 (def nodoubt (sample "resources/dont_speak-no_doubt.wav"))
 (def nodoubt-buf (load-sample "resources/dont_speak-no_doubt.wav"))
-(scope :buf nodoubt-buf)
+; (scope :buf nodoubt-buf)
 
 (def sample-buf (load-sample "resources/dont_speak-no_doubt.wav"))
 (defsynth reverb-on-left []
@@ -120,15 +120,34 @@
         (at (metro (+ 1.65 beat)) (c-hat))
           (apply-at (metro (+ 2 beat)) #'swinger (+ 2 beat) []))
 
-(swinger (metro))
+(comment
+  (swinger (metro))
+)
+
+(definst quux [freq 440] (* 0.3 (saw freq)))
+(comment
+  (quux)
+)
+(comment
+  (ctl quux :freq 660)
+)
 
 ;;;;;;;;
 ;;STOP;;
 ;;;;;;;;
-(stop)
+(comment
+  (stop)
+)
+
+;;;;;;;;;;;;;;;App;;;;;;;;;;;;;;;;;;;
+(defn choosesong [value] (print value))
+
+
+(defn receive [] 
+   (let [value (read-line)]
+       (choosesong (value))))
 
 (defn -main
       "Sentient Note"
       []
-      (saw-wave))
-
+      (while true (receive)))
