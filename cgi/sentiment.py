@@ -16,8 +16,6 @@ def post_request_string(str):
 
     return out
 
-{"documents":[{"score":0.981552,"id":"ruby_req"}],"errors":[]}
-
 def post_request(str):
     #resp = str
     resp = post_request_string(str)

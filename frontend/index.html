@@ -10,6 +10,7 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
+
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -118,7 +119,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- Right Column -->
     <div class="w3-col m2">
       <div class="w3-card-2 w3-round w3-white">
-        <div class="w3-container">
+        <div class="w3-container" class="ex" id="ex">
          <h4 class="w3-center">Chat name</h4>
          <p class="w3-center"><img src="http://www.w3schools.com/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
@@ -144,6 +145,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <center><p>App Title</a></p></center>
 </footer>
  
+
+<script src="jquery-3.1.1.min.js"></script>
+
 <script>
 // Accordion
 function myFunction(id) {
@@ -170,7 +174,8 @@ function openNav() {
 
 function post_mess() {
     var x = document.getElementById('message-box').value;
-    console.log(x);
+    
+    $.post("http://127.0.0.1:3600", x);
     document.getElementById('message-box').value = "";
 }
 
