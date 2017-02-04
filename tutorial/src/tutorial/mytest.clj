@@ -1,4 +1,4 @@
-(definst foo [] (saw 300))
+(definst foo [] (saw 299))
 
 (definst trem [freq 220 depth 500 rate 90 length 60]
     (* 0.3
