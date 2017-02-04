@@ -1,16 +1,18 @@
 import subprocess
 
+path = "/home/andrei-octavian/Hack/ICHack/cgi/"
+
 def post_request_string(str):
     """
     Makes a request to get sentiment for a single string.
     """
 
-    fo = open("reqbuffer.txt", "wb")
+    fo = open(path + "reqbuffer.txt", "wb")
     fo.write(str)
-    fo.close()    
-    
-    request_script = subprocess.Popen(['ruby', 'req.rb'], 
-        stdout=subprocess.PIPE, 
+    fo.close()
+
+    request_script = subprocess.Popen(['ruby', path + 'req.rb'],
+        stdout=subprocess.PIPE,
         stderr=subprocess.PIPE)
     out, err = request_script.communicate()
 
@@ -26,7 +28,7 @@ def post_request(str):
         if start != 0:
             break
         if chr >= '0' and chr <= '9':
-            start = pos 
+            start = pos
         pos += 1
 
     ln = len(resp)
@@ -39,4 +41,3 @@ def post_request(str):
             break
 
     return float(out)
-
