@@ -24,7 +24,7 @@ chatApp.controller('mainController', function($scope, $timeout) {
             $scope.currentChatUser.messages.push($scope.newPost);
             $scope.myMessage = "";
             
-            $.post("http://127.0.0.1:3600", $scope.newPost);
+$.post("http://127.0.0.1:4024 ", $scope.newPost);
         }
 
         $timeout($scope.updateScroll, 100);
@@ -52,9 +52,43 @@ chatApp.controller('mainController', function($scope, $timeout) {
         }
     }
     
-    $scope.songs = ["mysong1", "mysong2", "mysong3", "mysong4"];
-    
+    $scope.songs = ["blowin", "cryin", "dust", "hitRoad", "knock"];
+
     $scope.changeSong = function(song) {
-        $.get("http://127.0.0.1:3600", {title: song});
+        song = "3iu21h98dh19f".concat(song).concat(".txt");
+$.post("http://127.0.0.1:4024 ", song);
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

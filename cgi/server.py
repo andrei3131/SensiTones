@@ -17,27 +17,28 @@ print "Server starting on port " + str(port)
 
 my_file = '../frontend/script.js'
 
-line_good = """$.post("http://127.0.0.1:""" + str(port) + """ ", $scope.newPost);"""
-line_nbr = 27
+def modify_line(my_file, line_good, line_nbr):
+	content = ""
+	with open(my_file, 'r') as content_file:
+		content = content_file.read()
+		content_file.close()
 
-content = ""
-with open(my_file, 'r') as content_file:
-	content = content_file.read()
-	content_file.close()
+	cnt = 0
+	output = ""
+	for line in content.split('\n'):
+		cnt += 1
+		if cnt == line_nbr:
+		 	output += line_good
+		else:
+			output += line
+		output += '\n'
 
-cnt = 0
-output = ""
-for line in content.split('\n'):
-	cnt += 1
-	if cnt == line_nbr:
-	 	output += line_good
-	else:
-		output += line
-	output += '\n'
+	fo = open(my_file, "wb")
+	fo.write(output)
+	fo.close()
 
-fo = open(my_file, "wb")
-fo.write(output)
-fo.close()
+modify_line(my_file, """$.post("http://127.0.0.1:""" + str(port) + """ ", $scope.newPost);""", 27);
+modify_line(my_file, """$.post("http://127.0.0.1:""" + str(port) + """ ", song);""", 59);
 
 ################################################################################
 
@@ -65,11 +66,13 @@ while True:
     		message += line
 
     if "POST" in lines[0]:
-    	print "POST issued"
-    	engine.process_message(message)
-    else:
-    	print "GET issued"
-    	engine.process_files(message)
+    	if "3iu21h98dh19f" in message:
+    		message = message.split("3iu21h98dh19f")[1]
+    		engine.process_files(message)
+    	else:
+    		engine.process_message(message)
+
+    		
 
     csock.sendall("""HTTP/1.0 200 OK
 		Content-Type: text/html
