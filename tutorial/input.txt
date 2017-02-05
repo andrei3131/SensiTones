@@ -1,113 +1,72 @@
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
 
-[Verse 1]
-<span class="">D</span>           <span class="">A</span>                <span class="">Bm</span>
-  See the stone set in your eyes
-          <span class="">G</span>                  <span class="">D</span>
-See the thorn twist in your side
-   <span>A</span>        <span>Bm</span>   <span class="">G</span>
-I wait for you
-<span>D</span>             <span class="">A</span>                <span>Bm</span>
-  Sleight of hand and twist of fate
-              <span>G</span>                 <span>D</span>
-On a bed of nails she makes me wait
-       <span>A</span>        <span>Bm</span>       <span class="">G</span>
-And I wait, without you
 
-[Chorus]
-            <span>D</span>            <span>A</span>
-With or without you
-            <span>Bm</span>           <span>G</span>
-With or without you
+[Verse]
 
-[Verse 2]
-<span>D</span>               <span>A</span>                 <span>Bm</span>
-  Through the storm we reach the shore
-            <span>G</span>               <span>D</span>
-You give it all but I want more
-         <span>A</span>      <span>Bm</span>        <span>G</span>
-And I’m waiting for you
+   <span>Am</span>        <span>G</span>            <span>F</span>           <span>E7</span>
+Oh woman, oh woman, don't treat me so mean,
+           <span>Am</span>      <span>G</span>          <span>F</span>    <span>E7</span> 
+You're the meanest woman I've ever seen.
+  <span>Am</span>       <span>G</span>   <span>F</span>   <span>E7</span>
+I guess if you say so
+     <span>Am</span>      <span>G</span>       <span>F</span>          <span>E7</span>
+I'll have to pack my things and go.
+
 
 [Chorus]
-            <span>D</span>         <span>A</span>
-With or without you
-           <span>Bm</span>          <span>G</span>
-With or without you
-         <span>D</span>     <span>A</span>
-I can’t live
-            <span>Bm</span>       <span>G</span>
-With or without you
 
-[Instrumental]
-<span>D</span> <span>A</span> <span>Bm</span> <span>G</span>
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
 
-[Bridge]
-         <span>D</span>             <span>A</span>
-And you give yourself away
-         <span>Bm</span>            <span>G</span>
-And you give yourself away
-         <span>D</span>
-And you give
-         <span>A</span>
-And you give
-         <span>Bm</span>            <span>G</span>
-And you give yourself away
 
-[Verse 3]
-<span>D</span>               <span>A</span>
-  My hands are tied
-<span>Bm</span>         <span>G</span>                    <span>D</span>
- My body bruised, she's got me with
-            <span>A</span>
-Nothing to win and
-<span>Bm</span>               <span>G</span>
-Nothing left to lose
 
-[Bridge]
-         <span>D</span>             <span>A</span>
-And you give yourself away
-         <span>Bm</span>            <span>G</span>
-And you give yourself away
-         <span>D</span>
-And you give
-         <span>A</span>
-And you give
-         <span>Bm</span>            <span>G</span>
-And you give yourself away
+[Verse]
+
+     <span>Am</span>            <span>G</span>            <span>F</span>              <span>E7</span>
+Now baby, listen baby, don't-a treat me this-a way
+      <span>Am</span>    <span>G</span>            <span>F</span>         <span>E7</span>
+For I'll be back on my feet some day.      
+     <span>Am</span>           <span>G</span>              <span>F</span>      <span>E7</span>
+Don't care if you do 'cause it's understood
+          <span>Am</span>        <span>G</span>        <span>F</span>            <span>E7</span>
+you ain't got no money you just ain't no good.
+         <span>Am</span>       <span>G</span>      <span>F</span>    <span>E7</span>
+Well, I guess if you say so
+     <span>Am</span>                <span>G</span>        <span>F</span>    <span>E7</span>
+I'd have to pack my things and go. (That's right)
+
 
 [Chorus]
-            <span>D</span>         <span>A</span>
-With or without you
-           <span>Bm</span>          <span>G</span>
-With or without you
-         <span>D</span>     <span>A</span>
-I can’t live
-            <span>Bm</span>       <span>G</span>
-With or without you
 
-[Interlude]
-<span>D</span>            <span>A</span>
-Ooh-ooh-ooh-ooh
-<span>Bm</span>         <span>G</span>
-Ooh-ooh-ooh-ooh
-<span>D</span>            <span>A</span>
-Ooh-ooh-ooh-ooh
-<span>Bm</span>         <span>G</span>
-Ooh-ooh
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
+        <span>Am</span>   <span>G</span>     <span>F</span>              <span>E7</span>   <span>Am</span>       <span>G</span>        <span>F</span>        <span>E7</span>
+Hit the road Jack. Don't you come back no more, no more, no more, no more.
+        <span>Am</span>   <span>G</span>       <span>F</span>               <span>E7</span>      <span>Am</span>  <span>G</span> <span>F</span> <span>E7</span>
+Hit the road Jack and don't you come back no more.
 
-[Chorus]
-            <span>D</span>         <span>A</span>
-With or without you
-           <span>Bm</span>          <span>G</span>
-With or without you
-         <span>D</span>     <span>A</span>
-I can’t live
-            <span>Bm</span>       <span>G</span>
-With or without you
-            <span>D</span>
-With or without you
 
 [Outro]
-<span>D</span> <span>A</span> <span>Bm</span> <span>G</span>
-<span>D</span> <span>A</span> <span>Bm</span> <span>G</span>
-<span>D</span> <span>A</span> <span>Bm</span> <span>G</span>
-<span>D</span> <span>A</span> <span>Bm</span> <span>G</span>
+
+<span>Am</span>   <span>G</span>     <span>F</span>        <span>E7</span>
+          Don't you come back no more.
+<span>Am</span>   <span>G</span>     <span>F</span>        <span>E7</span>
+          Don't you come back no more.
+<span>Am</span>   <span>G</span>     <span>F</span>        <span>E7</span>
+          Don't you come back no more.
+<span>Am</span>   <span>G</span>     <span>F</span>        <span>E7</span>

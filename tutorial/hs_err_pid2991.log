@@ -1,0 +1,1503 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f16f88f70dc, pid=2991, tid=139736399099648
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f171419a000):  JavaThread "Thread-4" daemon [_thread_in_native, id=3051, stack(0x00007f16ea5e3000,0x00007f16ea6e4000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000160
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007f16380e4650, RCX=0x00007f171acd6be7, RDX=0x0000000000000000
+RSP=0x00007f16ea6e1ac0, RBP=0x0000000000000000, RSI=0x0000000000000001, RDI=0x0000000000000c13
+R8 =0x00007f16d22aa700, R9 =0x00007f16ea6e1a80, R10=0x00007f16d22aa9d0, R11=0x0000000000000246
+R12=0x0000000000000000, R13=0x00007f16ea6e22c0, R14=0x00007f16ea6e21d0, R15=0xfffffffffffffffc
+RIP=0x00007f16f88f70dc, EFLAGS=0x0000000000010206, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f16ea6e1ac0)
+0x00007f16ea6e1ac0:   00007f16380e4650 00007f1638000000
+0x00007f16ea6e1ad0:   00000000000f0000 00007f171ac705d4
+0x00007f16ea6e1ae0:   00007f17145cbc38 0000000000010000
+0x00007f16ea6e1af0:   00007f16380e4650 00007f16380e4650
+0x00007f16ea6e1b00:   000000000000e16f 00007f16f890d492
+0x00007f16ea6e1b10:   0000000000000010 00007f16ea6e1b30
+0x00007f16ea6e1b20:   00007f17149aa760 00007f16f8b6d034
+0x00007f16ea6e1b30:   000000000000000a 00007f16ea6e2350
+0x00007f16ea6e1b40:   00007f16ea6e1c10 00007f16f8b6ca61
+0x00007f16ea6e1b50:   0000000000000078 00007f171419a000
+0x00007f16ea6e1b60:   00007f16ea6e1f20 00007f16ea6e1a80
+0x00007f16ea6e1b70:   00007f1600000000 00007f16ea6e21d0
+0x00007f16ea6e1b80:   00007f17149aa760 00007f16f890d460
+0x00007f16ea6e1b90:   00007f16ea6e2350 00007f16ea6e1a80
+0x00007f16ea6e1ba0:   00007f17149aa6d0 0000000200000000
+0x00007f16ea6e1bb0:   0000000000000010 00007f16ea6e1b30
+0x00007f16ea6e1bc0:   00007f1600000002 00007f1719f1119c
+0x00007f16ea6e1bd0:   0000000000000001 efff467fe2f74a00
+0x00007f16ea6e1be0:   00000000ffffffff 0000000000000001
+0x00007f16ea6e1bf0:   0000000000000002 0000000000000004
+0x00007f16ea6e1c00:   00007f16f8b6efcc 0000000000000000
+0x00007f16ea6e1c10:   00007f16ea6e21b0 00007f16f8b621a5
+0x00007f16ea6e1c20:   00007f16a405fcf0 fffffff8ffffffff
+0x00007f16ea6e1c30:   ffffffffffffffff 00007f16f8b61fec
+0x00007f16ea6e1c40:   00007f16ea6e2180 00007f16ea6e1e90
+0x00007f16ea6e1c50:   0000000000000000 0000000000000000
+0x00007f16ea6e1c60:   00007f16ea6e1ce8 ffffffff00000000
+0x00007f16ea6e1c70:   0000000000000000 0000000000000000
+0x00007f16ea6e1c80:   0000000000000000 00007f16ea6e1ea0
+0x00007f16ea6e1c90:   00007f16ea6e1e90 00007f16ea6e2180
+0x00007f16ea6e1ca0:   00000000ffffffff 0000000000000001
+0x00007f16ea6e1cb0:   00007f16a405fcf0 00007f171ab65150 
+
+Instructions: (pc=0x00007f16f88f70dc)
+0x00007f16f88f70bc:   66 c1 c8 08 c7 43 24 00 00 00 00 66 89 43 22 e8
+0x00007f16f88f70cc:   50 e2 ff ff 85 c0 78 2d 48 89 df e8 64 dd ff ff
+0x00007f16f88f70dc:   80 bd 60 01 00 00 00 74 15 48 8b 15 a4 1c 24 00
+0x00007f16f88f70ec:   48 8d 7b 30 48 89 d9 31 f6 e8 26 cf ff ff 48 83 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00007f16380e4650 is an unknown value
+RCX=0x00007f171acd6be7: sched_setscheduler+0x7 in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007f171abed000
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00007f16ea6e1ac0 is pointing into the stack for thread: 0x00007f171419a000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x0000000000000c13 is an unknown value
+R8 =0x00007f16d22aa700 is an unknown value
+R9 =0x00007f16ea6e1a80 is pointing into the stack for thread: 0x00007f171419a000
+R10=0x00007f16d22aa9d0 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f16ea6e22c0 is pointing into the stack for thread: 0x00007f171419a000
+R14=0x00007f16ea6e21d0 is pointing into the stack for thread: 0x00007f171419a000
+R15=0xfffffffffffffffc is an unknown value
+
+
+Stack: [0x00007f16ea5e3000,0x00007f16ea6e4000],  sp=0x00007f16ea6e1ac0,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  overtone.sc.machinery.server.native.lib_ea1bff71_cbc2_414a_92a8_bc078a0cfd64.World_OpenUDP(Lcom/sun/jna/Pointer;I)I+0
+j  overtone.sc.machinery.server.native$eval2828$fn__2829.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+15
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+55
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  overtone.sc.machinery.server.connection$internal_booter.invokeStatic(Ljava/lang/Object;)Ljava/lang/Object;+201
+j  overtone.sc.machinery.server.connection$internal_booter.invoke(Ljava/lang/Object;)Ljava/lang/Object;+3
+j  overtone.sc.machinery.server.connection$boot_internal_server$fn__2921.invoke()Ljava/lang/Object;+13
+j  clojure.lang.AFn.run()V+1
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f16b4002800 JavaThread "SIGTERM handler" daemon [_thread_blocked, id=3085, stack(0x00007f16d24ad000,0x00007f16d25ae000)]
+  0x00007f1618003000 JavaThread "Thread-3" [_thread_blocked, id=3084, stack(0x00007f16d25ae000,0x00007f16d26af000)]
+  0x00007f16b4001000 JavaThread "SIGINT handler" daemon [_thread_blocked, id=3080, stack(0x00007f16d80f3000,0x00007f16d81f4000)]
+  0x00007f167c001000 JavaThread "pool-3-thread-10" [_thread_blocked, id=3070, stack(0x00007f16e80e2000,0x00007f16e81e3000)]
+=>0x00007f171419a000 JavaThread "Thread-4" daemon [_thread_in_native, id=3051, stack(0x00007f16ea5e3000,0x00007f16ea6e4000)]
+  0x00007f168c006800 JavaThread "pool-3-thread-9" [_thread_blocked, id=3050, stack(0x00007f16ea6e4000,0x00007f16ea7e5000)]
+  0x00007f1678001000 JavaThread "pool-3-thread-8" [_thread_blocked, id=3049, stack(0x00007f16f0294000,0x00007f16f0395000)]
+  0x00007f1680003000 JavaThread "pool-3-thread-7" [_thread_blocked, id=3046, stack(0x00007f16f0795000,0x00007f16f0896000)]
+  0x00007f1684001000 JavaThread "pool-3-thread-6" [_thread_blocked, id=3045, stack(0x00007f16f0a96000,0x00007f16f0b97000)]
+  0x00007f171501f000 JavaThread "pool-2-thread-10" [_thread_blocked, id=3042, stack(0x00007f16f0b97000,0x00007f16f0c98000)]
+  0x00007f1715002000 JavaThread "pool-2-thread-9" [_thread_blocked, id=3041, stack(0x00007f16f0c98000,0x00007f16f0d99000)]
+  0x00007f1715000800 JavaThread "pool-2-thread-8" [_thread_blocked, id=3040, stack(0x00007f16f0d99000,0x00007f16f0e9a000)]
+  0x00007f1715006000 JavaThread "pool-2-thread-7" [_thread_blocked, id=3039, stack(0x00007f16f0e9a000,0x00007f16f0f9b000)]
+  0x00007f1714ffa800 JavaThread "pool-2-thread-6" [_thread_blocked, id=3038, stack(0x00007f16f0f9b000,0x00007f16f109c000)]
+  0x00007f1714ff9800 JavaThread "pool-2-thread-5" [_thread_blocked, id=3037, stack(0x00007f16f109c000,0x00007f16f119d000)]
+  0x00007f1714ff0000 JavaThread "pool-2-thread-4" [_thread_blocked, id=3036, stack(0x00007f16f119d000,0x00007f16f129e000)]
+  0x00007f1714fef000 JavaThread "pool-2-thread-3" [_thread_blocked, id=3035, stack(0x00007f16f129e000,0x00007f16f139f000)]
+  0x00007f1714fa8000 JavaThread "pool-2-thread-2" [_thread_blocked, id=3034, stack(0x00007f16f159f000,0x00007f16f16a0000)]
+  0x00007f1714ff3000 JavaThread "pool-2-thread-1" [_thread_blocked, id=3033, stack(0x00007f16f16a0000,0x00007f16f17a1000)]
+  0x00007f168c004800 JavaThread "pool-3-thread-5" [_thread_blocked, id=3032, stack(0x00007f16f17a1000,0x00007f16f18a2000)]
+  0x00007f1680001000 JavaThread "pool-3-thread-4" [_thread_blocked, id=3028, stack(0x00007f16f1aa2000,0x00007f16f1ba3000)]
+  0x00007f168c003000 JavaThread "pool-3-thread-3" [_thread_blocked, id=3025, stack(0x00007f16f1ba3000,0x00007f16f1ca4000)]
+  0x00007f168c001000 JavaThread "pool-3-thread-2" [_thread_blocked, id=3024, stack(0x00007f16f1ea4000,0x00007f16f1fa5000)]
+  0x00007f17149c4800 JavaThread "pool-3-thread-1" [_thread_blocked, id=3023, stack(0x00007f16f1fa5000,0x00007f16f20a6000)]
+  0x00007f1714953800 JavaThread "clojure-agent-send-off-pool-0" [_thread_blocked, id=3020, stack(0x00007f16f8f73000,0x00007f16f9074000)]
+  0x00007f17143f6000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=3019, stack(0x00007f16f989c000,0x00007f16f999d000)]
+  0x00007f17143d6800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3018, stack(0x00007f16f9fad000,0x00007f16fa0ae000)]
+  0x00007f17140ce000 JavaThread "Service Thread" daemon [_thread_blocked, id=3014, stack(0x00007f170038b000,0x00007f170048c000)]
+  0x00007f17140ca800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=3013, stack(0x00007f170048c000,0x00007f170058d000)]
+  0x00007f17140c8800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=3012, stack(0x00007f170058d000,0x00007f170068e000)]
+  0x00007f17140c7000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=3011, stack(0x00007f170068e000,0x00007f170078f000)]
+  0x00007f17140c4000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3010, stack(0x00007f170078f000,0x00007f1700890000)]
+  0x00007f17140c2800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3009, stack(0x00007f1700890000,0x00007f1700991000)]
+  0x00007f171408e000 JavaThread "Finalizer" daemon [_thread_blocked, id=3008, stack(0x00007f1700de7000,0x00007f1700ee8000)]
+  0x00007f1714089800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3007, stack(0x00007f1700ee8000,0x00007f1700fe9000)]
+  0x00007f171400c000 JavaThread "main" [_thread_blocked, id=2993, stack(0x00007f171b6e2000,0x00007f171b7e3000)]
+
+Other Threads:
+  0x00007f1714082000 VMThread [stack: 0x00007f1700fe9000,0x00007f17010ea000] [id=3006]
+  0x00007f17140d0800 WatcherThread [stack: 0x00007f170028a000,0x00007f170038b000] [id=3015]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 543744K, used 294603K [0x000000076d000000, 0x0000000790c80000, 0x00000007c0000000)
+  eden space 538624K, 53% used [0x000000076d000000,0x000000077eb06eb8,0x000000078de00000)
+  from space 5120K, 93% used [0x0000000790780000,0x0000000790c2c020,0x0000000790c80000)
+  to   space 13824K, 0% used [0x000000078f180000,0x000000078f180000,0x000000078ff00000)
+ ParOldGen       total 173568K, used 21168K [0x00000006c7000000, 0x00000006d1980000, 0x000000076d000000)
+  object space 173568K, 12% used [0x00000006c7000000,0x00000006c84ac390,0x00000006d1980000)
+ Metaspace       used 36894K, capacity 48719K, committed 48808K, reserved 1085440K
+  class space    used 9730K, capacity 13689K, committed 13736K, reserved 1048576K
+
+Card table byte_map: [0x00007f1704837000,0x00007f1705000000] byte_map_base: 0x00007f17011ff000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f171abc0d60
+ Begin Bits: [0x00007f16bc380000, 0x00007f16c01c0000)
+ End Bits:   [0x00007f16c01c0000, 0x00007f16c4000000)
+
+Polling page: 0x00007f171b80f000
+
+CodeCache: size=245760Kb used=7429Kb max_used=7429Kb free=238331Kb
+ bounds [0x00007f1705000000, 0x00007f1705750000, 0x00007f1714000000]
+ total_blobs=3573 nmethods=3062 adapters=423
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 10,847 Thread 0x00007f17140ca800 3058  s    1       java.util.Hashtable::containsKey (65 bytes)
+Event: 10,848 Thread 0x00007f17140ca800 nmethod 3058 0x00007f170573fd10 code [0x00007f170573fea0, 0x00007f1705740278]
+Event: 10,848 Thread 0x00007f17140ca800 3059       1       java.util.concurrent.locks.ReentrantLock::lock (8 bytes)
+Event: 10,848 Thread 0x00007f17140ca800 nmethod 3059 0x00007f1705740410 code [0x00007f1705740580, 0x00007f17057406c8]
+Event: 10,849 Thread 0x00007f17140ca800 3060       1       java.util.concurrent.locks.ReentrantLock$NonfairSync::lock (25 bytes)
+Event: 10,849 Thread 0x00007f17140ca800 nmethod 3060 0x00007f1705740750 code [0x00007f17057408e0, 0x00007f1705740af8]
+Event: 11,629 Thread 0x00007f17140ca800 3062       1       java.math.BigInteger::valueOf (62 bytes)
+Event: 11,630 Thread 0x00007f17140ca800 nmethod 3062 0x00007f1705740c50 code [0x00007f1705740dc0, 0x00007f1705741068]
+Event: 11,630 Thread 0x00007f17140ca800 3061       1       clojure.lang.Numbers$BigIntOps::combine (8 bytes)
+Event: 11,630 Thread 0x00007f17140ca800 nmethod 3061 0x00007f17057411d0 code [0x00007f1705741340, 0x00007f1705741488]
+
+GC Heap History (10 events):
+Event: 2,986 GC heap before
+{Heap before GC invocations=8 (full 1):
+ PSYoungGen      total 281600K, used 278604K [0x000000076d000000, 0x0000000785880000, 0x00000007c0000000)
+  eden space 271360K, 100% used [0x000000076d000000,0x000000077d900000,0x000000077d900000)
+  from space 10240K, 70% used [0x000000077e300000,0x000000077ea13358,0x000000077ed00000)
+  to   space 10240K, 0% used [0x000000077d900000,0x000000077d900000,0x000000077e300000)
+ ParOldGen       total 108032K, used 7577K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 7% used [0x00000006c7000000,0x00000006c77667b0,0x00000006cd980000)
+ Metaspace       used 25398K, capacity 30033K, committed 30384K, reserved 1071104K
+  class space    used 6265K, capacity 7992K, committed 8112K, reserved 1048576K
+Event: 2,993 GC heap after
+Heap after GC invocations=8 (full 1):
+ PSYoungGen      total 281600K, used 7842K [0x000000076d000000, 0x0000000788480000, 0x00000007c0000000)
+  eden space 271360K, 0% used [0x000000076d000000,0x000000076d000000,0x000000077d900000)
+  from space 10240K, 76% used [0x000000077d900000,0x000000077e0a8988,0x000000077e300000)
+  to   space 10240K, 0% used [0x0000000787a80000,0x0000000787a80000,0x0000000788480000)
+ ParOldGen       total 108032K, used 7585K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 7% used [0x00000006c7000000,0x00000006c77687b0,0x00000006cd980000)
+ Metaspace       used 25398K, capacity 30033K, committed 30384K, reserved 1071104K
+  class space    used 6265K, capacity 7992K, committed 8112K, reserved 1048576K
+}
+Event: 3,312 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 281600K, used 279202K [0x000000076d000000, 0x0000000788480000, 0x00000007c0000000)
+  eden space 271360K, 100% used [0x000000076d000000,0x000000077d900000,0x000000077d900000)
+  from space 10240K, 76% used [0x000000077d900000,0x000000077e0a8988,0x000000077e300000)
+  to   space 10240K, 0% used [0x0000000787a80000,0x0000000787a80000,0x0000000788480000)
+ ParOldGen       total 108032K, used 7585K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 7% used [0x00000006c7000000,0x00000006c77687b0,0x00000006cd980000)
+ Metaspace       used 26142K, capacity 31313K, committed 31536K, reserved 1073152K
+  class space    used 6519K, capacity 8384K, committed 8496K, reserved 1048576K
+Event: 3,323 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 435200K, used 10236K [0x000000076d000000, 0x0000000788a00000, 0x00000007c0000000)
+  eden space 424960K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000786f00000)
+  from space 10240K, 99% used [0x0000000787a80000,0x000000078847f348,0x0000000788480000)
+  to   space 11776K, 0% used [0x0000000786f00000,0x0000000786f00000,0x0000000787a80000)
+ ParOldGen       total 108032K, used 8896K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 8% used [0x00000006c7000000,0x00000006c78b0330,0x00000006cd980000)
+ Metaspace       used 26142K, capacity 31313K, committed 31536K, reserved 1073152K
+  class space    used 6519K, capacity 8384K, committed 8496K, reserved 1048576K
+}
+Event: 3,915 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 435200K, used 321681K [0x000000076d000000, 0x0000000788a00000, 0x00000007c0000000)
+  eden space 424960K, 73% used [0x000000076d000000,0x0000000780025160,0x0000000786f00000)
+  from space 10240K, 99% used [0x0000000787a80000,0x000000078847f348,0x0000000788480000)
+  to   space 11776K, 0% used [0x0000000786f00000,0x0000000786f00000,0x0000000787a80000)
+ ParOldGen       total 108032K, used 8896K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 8% used [0x00000006c7000000,0x00000006c78b0330,0x00000006cd980000)
+ Metaspace       used 28872K, capacity 35439K, committed 35496K, reserved 1075200K
+  class space    used 7311K, capacity 9586K, committed 9640K, reserved 1048576K
+Event: 3,926 GC heap after
+Heap after GC invocations=10 (full 1):
+ PSYoungGen      total 436736K, used 11776K [0x000000076d000000, 0x0000000791480000, 0x00000007c0000000)
+  eden space 424960K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000786f00000)
+  from space 11776K, 100% used [0x0000000786f00000,0x0000000787a80000,0x0000000787a80000)
+  to   space 13312K, 0% used [0x0000000790780000,0x0000000790780000,0x0000000791480000)
+ ParOldGen       total 108032K, used 10158K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 9% used [0x00000006c7000000,0x00000006c79eba50,0x00000006cd980000)
+ Metaspace       used 28872K, capacity 35439K, committed 35496K, reserved 1075200K
+  class space    used 7311K, capacity 9586K, committed 9640K, reserved 1048576K
+}
+Event: 3,926 GC heap before
+{Heap before GC invocations=11 (full 2):
+ PSYoungGen      total 436736K, used 11776K [0x000000076d000000, 0x0000000791480000, 0x00000007c0000000)
+  eden space 424960K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000786f00000)
+  from space 11776K, 100% used [0x0000000786f00000,0x0000000787a80000,0x0000000787a80000)
+  to   space 13312K, 0% used [0x0000000790780000,0x0000000790780000,0x0000000791480000)
+ ParOldGen       total 108032K, used 10158K [0x00000006c7000000, 0x00000006cd980000, 0x000000076d000000)
+  object space 108032K, 9% used [0x00000006c7000000,0x00000006c79eba50,0x00000006cd980000)
+ Metaspace       used 28872K, capacity 35439K, committed 35496K, reserved 1075200K
+  class space    used 7311K, capacity 9586K, committed 9640K, reserved 1048576K
+Event: 4,001 GC heap after
+Heap after GC invocations=11 (full 2):
+ PSYoungGen      total 436736K, used 0K [0x000000076d000000, 0x0000000791480000, 0x00000007c0000000)
+  eden space 424960K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000786f00000)
+  from space 11776K, 0% used [0x0000000786f00000,0x0000000786f00000,0x0000000787a80000)
+  to   space 13312K, 0% used [0x0000000790780000,0x0000000790780000,0x0000000791480000)
+ ParOldGen       total 173568K, used 21160K [0x00000006c7000000, 0x00000006d1980000, 0x000000076d000000)
+  object space 173568K, 12% used [0x00000006c7000000,0x00000006c84aa390,0x00000006d1980000)
+ Metaspace       used 28872K, capacity 35439K, committed 35496K, reserved 1075200K
+  class space    used 7311K, capacity 9586K, committed 9640K, reserved 1048576K
+}
+Event: 4,783 GC heap before
+{Heap before GC invocations=12 (full 2):
+ PSYoungGen      total 436736K, used 424960K [0x000000076d000000, 0x0000000791480000, 0x00000007c0000000)
+  eden space 424960K, 100% used [0x000000076d000000,0x0000000786f00000,0x0000000786f00000)
+  from space 11776K, 0% used [0x0000000786f00000,0x0000000786f00000,0x0000000787a80000)
+  to   space 13312K, 0% used [0x0000000790780000,0x0000000790780000,0x0000000791480000)
+ ParOldGen       total 173568K, used 21160K [0x00000006c7000000, 0x00000006d1980000, 0x000000076d000000)
+  object space 173568K, 12% used [0x00000006c7000000,0x00000006c84aa390,0x00000006d1980000)
+ Metaspace       used 32178K, capacity 41287K, committed 41512K, reserved 1079296K
+  class space    used 8328K, capacity 11276K, committed 11304K, reserved 1048576K
+Event: 4,789 GC heap after
+Heap after GC invocations=12 (full 2):
+ PSYoungGen      total 543744K, used 4784K [0x000000076d000000, 0x0000000790c80000, 0x00000007c0000000)
+  eden space 538624K, 0% used [0x000000076d000000,0x000000076d000000,0x000000078de00000)
+  from space 5120K, 93% used [0x0000000790780000,0x0000000790c2c020,0x0000000790c80000)
+  to   space 13824K, 0% used [0x000000078f180000,0x000000078f180000,0x000000078ff00000)
+ ParOldGen       total 173568K, used 21168K [0x00000006c7000000, 0x00000006d1980000, 0x000000076d000000)
+  object space 173568K, 12% used [0x00000006c7000000,0x00000006c84ac390,0x00000006d1980000)
+ Metaspace       used 32178K, capacity 41287K, committed 41512K, reserved 1079296K
+  class space    used 8328K, capacity 11276K, committed 11304K, reserved 1048576K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f76f850) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f76fc48) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f770b70) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f770f68) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f771eb8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,526 Thread 0x00007f171400c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076f7722b0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 0,913 Thread 0x00007f171400c000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076e82a408) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/methodHandles.cpp, line 1146]
+Event: 0,914 Thread 0x00007f171400c000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076e838dc8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/methodHandles.cpp, line 1146]
+Event: 0,927 Thread 0x00007f171400c000 Exception <a 'java/io/FileNotFoundException'> (0x000000076e8b7e48) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 0,927 Thread 0x00007f171400c000 Exception <a 'java/io/FileNotFoundException'> (0x000000076e8b9160) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jni.cpp, line 709]
+
+Events (10 events):
+Event: 10,843 Thread 0x00007f1618007000 Thread added: 0x00007f1618007000
+Event: 10,843 loading class sun/awt/X11/XSystemTrayPeer
+Event: 10,843 loading class java/awt/peer/SystemTrayPeer
+Event: 10,843 loading class java/awt/peer/SystemTrayPeer done
+Event: 10,843 loading class sun/awt/X11/XMSelectionListener
+Event: 10,844 Thread 0x00007f1618007000 Thread exited: 0x00007f1618007000
+Event: 10,846 loading class sun/awt/X11/XMSelectionListener done
+Event: 10,846 Thread 0x00007f1618001000 Thread exited: 0x00007f1618001000
+Event: 10,847 loading class sun/awt/X11/XSystemTrayPeer done
+Event: 10,848 Thread 0x00007f1618005000 Thread exited: 0x00007f1618005000
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:05 2883972                            /usr/lib/jvm/java-8-oracle/jre/bin/java
+00600000-00601000 rw-p 00000000 08:05 2883972                            /usr/lib/jvm/java-8-oracle/jre/bin/java
+016c1000-016e2000 rw-p 00000000 00:00 0                                  [heap]
+6c7000000-6d1980000 rw-p 00000000 00:00 0 
+6d1980000-76d000000 ---p 00000000 00:00 0 
+76d000000-790c80000 rw-p 00000000 00:00 0 
+790c80000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c0d6a000 rw-p 00000000 00:00 0 
+7c0d6a000-800000000 ---p 00000000 00:00 0 
+7f1600000000-7f1600021000 rw-p 00000000 00:00 0 
+7f1600021000-7f1604000000 ---p 00000000 00:00 0 
+7f1608000000-7f1608021000 rw-p 00000000 00:00 0 
+7f1608021000-7f160c000000 ---p 00000000 00:00 0 
+7f160c000000-7f160c021000 rw-p 00000000 00:00 0 
+7f160c021000-7f1610000000 ---p 00000000 00:00 0 
+7f1610000000-7f1610021000 rw-p 00000000 00:00 0 
+7f1610021000-7f1614000000 ---p 00000000 00:00 0 
+7f1614000000-7f1614021000 rw-p 00000000 00:00 0 
+7f1614021000-7f1618000000 ---p 00000000 00:00 0 
+7f1618000000-7f1618021000 rw-p 00000000 00:00 0 
+7f1618021000-7f161c000000 ---p 00000000 00:00 0 
+7f161ffff000-7f1630000000 rw-p 00000000 00:00 0 
+7f1630000000-7f1630022000 rw-p 00000000 00:00 0 
+7f1630022000-7f1634000000 ---p 00000000 00:00 0 
+7f1634000000-7f1634021000 rw-p 00000000 00:00 0 
+7f1634021000-7f1638000000 ---p 00000000 00:00 0 
+7f1638000000-7f16380f5000 rw-p 00000000 00:00 0 
+7f16380f5000-7f163c000000 ---p 00000000 00:00 0 
+7f163c000000-7f163c021000 rw-p 00000000 00:00 0 
+7f163c021000-7f1640000000 ---p 00000000 00:00 0 
+7f1640000000-7f1640021000 rw-p 00000000 00:00 0 
+7f1640021000-7f1644000000 ---p 00000000 00:00 0 
+7f1644000000-7f1644021000 rw-p 00000000 00:00 0 
+7f1644021000-7f1648000000 ---p 00000000 00:00 0 
+7f1648000000-7f1648021000 rw-p 00000000 00:00 0 
+7f1648021000-7f164c000000 ---p 00000000 00:00 0 
+7f164c000000-7f164c021000 rw-p 00000000 00:00 0 
+7f164c021000-7f1650000000 ---p 00000000 00:00 0 
+7f1650000000-7f1650021000 rw-p 00000000 00:00 0 
+7f1650021000-7f1654000000 ---p 00000000 00:00 0 
+7f1654000000-7f1654021000 rw-p 00000000 00:00 0 
+7f1654021000-7f1658000000 ---p 00000000 00:00 0 
+7f1658000000-7f1658021000 rw-p 00000000 00:00 0 
+7f1658021000-7f165c000000 ---p 00000000 00:00 0 
+7f165c000000-7f165c021000 rw-p 00000000 00:00 0 
+7f165c021000-7f1660000000 ---p 00000000 00:00 0 
+7f1660000000-7f1660021000 rw-p 00000000 00:00 0 
+7f1660021000-7f1664000000 ---p 00000000 00:00 0 
+7f1664000000-7f1664021000 rw-p 00000000 00:00 0 
+7f1664021000-7f1668000000 ---p 00000000 00:00 0 
+7f1668000000-7f1668021000 rw-p 00000000 00:00 0 
+7f1668021000-7f166c000000 ---p 00000000 00:00 0 
+7f166c000000-7f166c021000 rw-p 00000000 00:00 0 
+7f166c021000-7f1670000000 ---p 00000000 00:00 0 
+7f1670000000-7f1670021000 rw-p 00000000 00:00 0 
+7f1670021000-7f1674000000 ---p 00000000 00:00 0 
+7f1674000000-7f1674021000 rw-p 00000000 00:00 0 
+7f1674021000-7f1678000000 ---p 00000000 00:00 0 
+7f1678000000-7f1678021000 rw-p 00000000 00:00 0 
+7f1678021000-7f167c000000 ---p 00000000 00:00 0 
+7f167c000000-7f167c021000 rw-p 00000000 00:00 0 
+7f167c021000-7f1680000000 ---p 00000000 00:00 0 
+7f1680000000-7f1680021000 rw-p 00000000 00:00 0 
+7f1680021000-7f1684000000 ---p 00000000 00:00 0 
+7f1684000000-7f1684021000 rw-p 00000000 00:00 0 
+7f1684021000-7f1688000000 ---p 00000000 00:00 0 
+7f1688000000-7f1688021000 rw-p 00000000 00:00 0 
+7f1688021000-7f168c000000 ---p 00000000 00:00 0 
+7f168c000000-7f168c021000 rw-p 00000000 00:00 0 
+7f168c021000-7f1690000000 ---p 00000000 00:00 0 
+7f1690000000-7f1690021000 rw-p 00000000 00:00 0 
+7f1690021000-7f1694000000 ---p 00000000 00:00 0 
+7f1694000000-7f1694021000 rw-p 00000000 00:00 0 
+7f1694021000-7f1698000000 ---p 00000000 00:00 0 
+7f1698000000-7f1698021000 rw-p 00000000 00:00 0 
+7f1698021000-7f169c000000 ---p 00000000 00:00 0 
+7f169c000000-7f169c021000 rw-p 00000000 00:00 0 
+7f169c021000-7f16a0000000 ---p 00000000 00:00 0 
+7f16a0000000-7f16a0021000 rw-p 00000000 00:00 0 
+7f16a0021000-7f16a4000000 ---p 00000000 00:00 0 
+7f16a4000000-7f16a4468000 rw-p 00000000 00:00 0 
+7f16a4468000-7f16a8000000 ---p 00000000 00:00 0 
+7f16a8000000-7f16a8076000 rw-p 00000000 00:00 0 
+7f16a8076000-7f16ac000000 ---p 00000000 00:00 0 
+7f16ac000000-7f16ac021000 rw-p 00000000 00:00 0 
+7f16ac021000-7f16b0000000 ---p 00000000 00:00 0 
+7f16b0000000-7f16b0021000 rw-p 00000000 00:00 0 
+7f16b0021000-7f16b4000000 ---p 00000000 00:00 0 
+7f16b4000000-7f16b4021000 rw-p 00000000 00:00 0 
+7f16b4021000-7f16b8000000 ---p 00000000 00:00 0 
+7f16b8000000-7f16b8021000 rw-p 00000000 00:00 0 
+7f16b8021000-7f16bc000000 ---p 00000000 00:00 0 
+7f16bc380000-7f16c4000000 rw-p 00000000 00:00 0 
+7f16c4000000-7f16c4021000 rw-p 00000000 00:00 0 
+7f16c4021000-7f16c8000000 ---p 00000000 00:00 0 
+7f16c8000000-7f16c8021000 rw-p 00000000 00:00 0 
+7f16c8021000-7f16cc000000 ---p 00000000 00:00 0 
+7f16cc000000-7f16cc021000 rw-p 00000000 00:00 0 
+7f16cc021000-7f16d0000000 ---p 00000000 00:00 0 
+7f16d1aaa000-7f16d1aab000 ---p 00000000 00:00 0 
+7f16d1aab000-7f16d22ab000 rw-p 00000000 00:00 0 
+7f16d22ab000-7f16d22ae000 ---p 00000000 00:00 0 
+7f16d22ae000-7f16d23ac000 rw-p 00000000 00:00 0 
+7f16d23ac000-7f16d23af000 ---p 00000000 00:00 0 
+7f16d23af000-7f16d24ad000 rw-p 00000000 00:00 0 
+7f16d24ad000-7f16d24b0000 ---p 00000000 00:00 0 
+7f16d24b0000-7f16d25ae000 rw-p 00000000 00:00 0 
+7f16d25ae000-7f16d25b1000 ---p 00000000 00:00 0 
+7f16d25b1000-7f16d26af000 rw-p 00000000 00:00 0 
+7f16d26af000-7f16d26b2000 ---p 00000000 00:00 0 
+7f16d26b2000-7f16d27b0000 rw-p 00000000 00:00 0 
+7f16d27b0000-7f16d27b1000 ---p 00000000 00:00 0 
+7f16d27b1000-7f16d2fb1000 rw-p 00000000 00:00 0 
+7f16d2fb1000-7f16d2fb5000 r-xp 00000000 08:05 1403551                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TagSystemUgens.so
+7f16d2fb5000-7f16d31b4000 ---p 00004000 08:05 1403551                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TagSystemUgens.so
+7f16d31b4000-7f16d31b5000 r--p 00003000 08:05 1403551                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TagSystemUgens.so
+7f16d31b5000-7f16d31b6000 rw-p 00004000 08:05 1403551                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TagSystemUgens.so
+7f16d31b6000-7f16d31ba000 r-xp 00000000 08:05 1403509                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AY_UGen.so
+7f16d31ba000-7f16d33b9000 ---p 00004000 08:05 1403509                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AY_UGen.so
+7f16d33b9000-7f16d33ba000 r--p 00003000 08:05 1403509                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AY_UGen.so
+7f16d33ba000-7f16d33bb000 rw-p 00004000 08:05 1403509                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AY_UGen.so
+7f16d33bb000-7f16d33bd000 rw-p 00000000 00:00 0 
+7f16d33bd000-7f16d33f7000 r-xp 00000000 08:05 1403525                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshGrainUGens.so
+7f16d33f7000-7f16d35f6000 ---p 0003a000 08:05 1403525                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshGrainUGens.so
+7f16d35f6000-7f16d35f7000 r--p 00039000 08:05 1403525                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshGrainUGens.so
+7f16d35f7000-7f16d35f8000 rw-p 0003a000 08:05 1403525                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshGrainUGens.so
+7f16d35f8000-7f16d35fe000 r-xp 00000000 08:05 1403577                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ReverbUGens.so
+7f16d35fe000-7f16d37fd000 ---p 00006000 08:05 1403577                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ReverbUGens.so
+7f16d37fd000-7f16d37fe000 r--p 00005000 08:05 1403577                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ReverbUGens.so
+7f16d37fe000-7f16d37ff000 rw-p 00006000 08:05 1403577                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ReverbUGens.so
+7f16d37ff000-7f16d3800000 ---p 00000000 00:00 0 
+7f16d3800000-7f16d4000000 rw-p 00000000 00:00 0 
+7f16d4000000-7f16d4021000 rw-p 00000000 00:00 0 
+7f16d4021000-7f16d8000000 ---p 00000000 00:00 0 
+7f16d80f3000-7f16d80f6000 ---p 00000000 00:00 0 
+7f16d80f6000-7f16d81f4000 rw-p 00000000 00:00 0 
+7f16d81f4000-7f16d81f9000 r-xp 00000000 08:05 1403518                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobGrain.so
+7f16d81f9000-7f16d83f9000 ---p 00005000 08:05 1403518                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobGrain.so
+7f16d83f9000-7f16d83fa000 r--p 00005000 08:05 1403518                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobGrain.so
+7f16d83fa000-7f16d83fb000 rw-p 00006000 08:05 1403518                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobGrain.so
+7f16d83fb000-7f16d83fe000 r-xp 00000000 08:05 1403570                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MouseUGens.so
+7f16d83fe000-7f16d85fd000 ---p 00003000 08:05 1403570                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MouseUGens.so
+7f16d85fd000-7f16d85fe000 r--p 00002000 08:05 1403570                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MouseUGens.so
+7f16d85fe000-7f16d85ff000 rw-p 00003000 08:05 1403570                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MouseUGens.so
+7f16d85ff000-7f16d8602000 r-xp 00000000 08:05 1403535                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFilterUGens.so
+7f16d8602000-7f16d8801000 ---p 00003000 08:05 1403535                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFilterUGens.so
+7f16d8801000-7f16d8802000 r--p 00002000 08:05 1403535                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFilterUGens.so
+7f16d8802000-7f16d8803000 rw-p 00003000 08:05 1403535                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFilterUGens.so
+7f16d8803000-7f16d880b000 r-xp 00000000 08:05 1403547                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RMEQSuite.so
+7f16d880b000-7f16d8a0a000 ---p 00008000 08:05 1403547                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RMEQSuite.so
+7f16d8a0a000-7f16d8a0b000 r--p 00007000 08:05 1403547                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RMEQSuite.so
+7f16d8a0b000-7f16d8a0c000 rw-p 00008000 08:05 1403547                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RMEQSuite.so
+7f16d8a0c000-7f16d8a0e000 r-xp 00000000 08:05 1403510                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatPVUgens.so
+7f16d8a0e000-7f16d8c0d000 ---p 00002000 08:05 1403510                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatPVUgens.so
+7f16d8c0d000-7f16d8c0e000 r--p 00001000 08:05 1403510                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatPVUgens.so
+7f16d8c0e000-7f16d8c0f000 rw-p 00002000 08:05 1403510                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatPVUgens.so
+7f16d8c0f000-7f16d8c1b000 rw-p 00000000 00:00 0 
+7f16d8c1b000-7f16d8c1e000 r-xp 00000000 08:05 1403542                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MdaUGens.so
+7f16d8c1e000-7f16d8e1d000 ---p 00003000 08:05 1403542                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MdaUGens.so
+7f16d8e1d000-7f16d8e1e000 r--p 00002000 08:05 1403542                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MdaUGens.so
+7f16d8e1e000-7f16d8f3d000 rw-p 00003000 08:05 1403542                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MdaUGens.so
+7f16d8f3d000-7f16d8f3e000 ---p 00000000 00:00 0 
+7f16d8f3e000-7f16d973e000 rw-p 00000000 00:00 0 
+7f16d973e000-7f16d973f000 r-xp 00000000 08:05 1403566                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/KeyboardUGens.so
+7f16d973f000-7f16d993f000 ---p 00001000 08:05 1403566                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/KeyboardUGens.so
+7f16d993f000-7f16d9940000 r--p 00001000 08:05 1403566                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/KeyboardUGens.so
+7f16d9940000-7f16d9941000 rw-p 00002000 08:05 1403566                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/KeyboardUGens.so
+7f16d9941000-7f16d9944000 r-xp 00000000 08:05 1403520                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BlackrainUGens.so
+7f16d9944000-7f16d9b44000 ---p 00003000 08:05 1403520                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BlackrainUGens.so
+7f16d9b44000-7f16d9b45000 r--p 00003000 08:05 1403520                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BlackrainUGens.so
+7f16d9b45000-7f16d9b46000 rw-p 00004000 08:05 1403520                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BlackrainUGens.so
+7f16d9b46000-7f16d9b4a000 r-xp 00000000 08:05 1403507                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AmbisonicUGens.so
+7f16d9b4a000-7f16d9d4a000 ---p 00004000 08:05 1403507                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AmbisonicUGens.so
+7f16d9d4a000-7f16d9d4b000 r--p 00004000 08:05 1403507                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AmbisonicUGens.so
+7f16d9d4b000-7f16d9d4c000 rw-p 00005000 08:05 1403507                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AmbisonicUGens.so
+7f16d9d4c000-7f16d9d4e000 r-xp 00000000 08:05 1403537                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDOscUGens.so
+7f16d9d4e000-7f16d9f4d000 ---p 00002000 08:05 1403537                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDOscUGens.so
+7f16d9f4d000-7f16d9f4e000 r--p 00001000 08:05 1403537                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDOscUGens.so
+7f16d9f4e000-7f16d9f4f000 rw-p 00002000 08:05 1403537                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDOscUGens.so
+7f16d9f4f000-7f16d9f51000 r-xp 00000000 08:05 1403546                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RFWUGens.so
+7f16d9f51000-7f16da150000 ---p 00002000 08:05 1403546                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RFWUGens.so
+7f16da150000-7f16da151000 r--p 00001000 08:05 1403546                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RFWUGens.so
+7f16da151000-7f16da152000 rw-p 00002000 08:05 1403546                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/RFWUGens.so
+7f16da152000-7f16da154000 r-xp 00000000 08:05 1403536                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f16da154000-7f16da353000 ---p 00002000 08:05 1403536                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f16da353000-7f16da354000 r--p 00001000 08:05 1403536                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f16da354000-7f16da355000 rw-p 00002000 08:05 1403536                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f16da355000-7f16da361000 r-xp 00000000 08:05 1403545                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PitchDetection.so
+7f16da361000-7f16da560000 ---p 0000c000 08:05 1403545                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PitchDetection.so
+7f16da560000-7f16da561000 r--p 0000b000 08:05 1403545                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PitchDetection.so
+7f16da561000-7f16da562000 rw-p 0000c000 08:05 1403545                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PitchDetection.so
+7f16da562000-7f16da566000 r-xp 00000000 08:05 1403530                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDBufferUGens.so
+7f16da566000-7f16da765000 ---p 00004000 08:05 1403530                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDBufferUGens.so
+7f16da765000-7f16da766000 r--p 00003000 08:05 1403530                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDBufferUGens.so
+7f16da766000-7f16da767000 rw-p 00004000 08:05 1403530                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDBufferUGens.so
+7f16da767000-7f16da768000 ---p 00000000 00:00 0 
+7f16da768000-7f16daf68000 rw-p 00000000 00:00 0 
+7f16daf68000-7f16daf6b000 r-xp 00000000 08:05 1403559                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DiskIO_UGens.so
+7f16daf6b000-7f16db16b000 ---p 00003000 08:05 1403559                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DiskIO_UGens.so
+7f16db16b000-7f16db16c000 r--p 00003000 08:05 1403559                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DiskIO_UGens.so
+7f16db16c000-7f16db16d000 rw-p 00004000 08:05 1403559                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DiskIO_UGens.so
+7f16db16d000-7f16db16e000 rw-p 00000000 00:00 0 
+7f16db16e000-7f16db176000 r-xp 00000000 08:05 1403574                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PanUGens.so
+7f16db176000-7f16db375000 ---p 00008000 08:05 1403574                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PanUGens.so
+7f16db375000-7f16db376000 r--p 00007000 08:05 1403574                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PanUGens.so
+7f16db376000-7f16db377000 rw-p 00008000 08:05 1403574                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PanUGens.so
+7f16db377000-7f16db383000 r-xp 00000000 08:05 1403579                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TriggerUGens.so
+7f16db383000-7f16db582000 ---p 0000c000 08:05 1403579                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TriggerUGens.so
+7f16db582000-7f16db583000 r--p 0000b000 08:05 1403579                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TriggerUGens.so
+7f16db583000-7f16db584000 rw-p 0000c000 08:05 1403579                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TriggerUGens.so
+7f16db584000-7f16db589000 r-xp 00000000 08:05 1403521                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/Concat.so
+7f16db589000-7f16db788000 ---p 00005000 08:05 1403521                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/Concat.so
+7f16db788000-7f16db789000 r--p 00004000 08:05 1403521                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/Concat.so
+7f16db789000-7f16db78a000 rw-p 00005000 08:05 1403521                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/Concat.so
+7f16db78a000-7f16db790000 r-xp 00000000 08:05 1403576                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PV_ThirdParty.so
+7f16db790000-7f16db990000 ---p 00006000 08:05 1403576                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PV_ThirdParty.so
+7f16db990000-7f16db991000 r--p 00006000 08:05 1403576                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PV_ThirdParty.so
+7f16db991000-7f16db992000 rw-p 00007000 08:05 1403576                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PV_ThirdParty.so
+7f16db992000-7f16db9c2000 rw-p 00000000 00:00 0 
+7f16db9c2000-7f16db9e0000 r-xp 00000000 08:05 1403527                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshUGens.so
+7f16db9e0000-7f16dbbe0000 ---p 0001e000 08:05 1403527                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshUGens.so
+7f16dbbe0000-7f16dbbe1000 r--p 0001e000 08:05 1403527                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshUGens.so
+7f16dbbe1000-7f16dbbe2000 rw-p 0001f000 08:05 1403527                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshUGens.so
+7f16dbbe2000-7f16dbbf8000 r-xp 00000000 08:05 1403517                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFilt.so
+7f16dbbf8000-7f16dbdf7000 ---p 00016000 08:05 1403517                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFilt.so
+7f16dbdf7000-7f16dbdf8000 r--p 00015000 08:05 1403517                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFilt.so
+7f16dbdf8000-7f16dbdf9000 rw-p 00016000 08:05 1403517                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFilt.so
+7f16dbdf9000-7f16dbdff000 r-xp 00000000 08:05 1403519                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobNoise.so
+7f16dbdff000-7f16dbffe000 ---p 00006000 08:05 1403519                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobNoise.so
+7f16dbffe000-7f16dbfff000 r--p 00005000 08:05 1403519                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobNoise.so
+7f16dbfff000-7f16dc000000 rw-p 00006000 08:05 1403519                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobNoise.so
+7f16dc000000-7f16dc021000 rw-p 00000000 00:00 0 
+7f16dc021000-7f16e0000000 ---p 00000000 00:00 0 
+7f16e0022000-7f16e0027000 r-xp 00000000 08:05 1403532                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDChaosUGens.so
+7f16e0027000-7f16e0226000 ---p 00005000 08:05 1403532                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDChaosUGens.so
+7f16e0226000-7f16e0227000 r--p 00004000 08:05 1403532                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDChaosUGens.so
+7f16e0227000-7f16e0228000 rw-p 00005000 08:05 1403532                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDChaosUGens.so
+7f16e0228000-7f16e022a000 r-xp 00000000 08:05 1403538                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDPollUGens.so
+7f16e022a000-7f16e0429000 ---p 00002000 08:05 1403538                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDPollUGens.so
+7f16e0429000-7f16e042a000 r--p 00001000 08:05 1403538                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDPollUGens.so
+7f16e042a000-7f16e042b000 rw-p 00002000 08:05 1403538                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDPollUGens.so
+7f16e042b000-7f16e0431000 r-xp 00000000 08:05 1403572                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NoiseUGens.so
+7f16e0431000-7f16e0630000 ---p 00006000 08:05 1403572                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NoiseUGens.so
+7f16e0630000-7f16e0631000 r--p 00005000 08:05 1403572                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NoiseUGens.so
+7f16e0631000-7f16e0632000 rw-p 00006000 08:05 1403572                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NoiseUGens.so
+7f16e0632000-7f16e0645000 r-xp 00000000 08:05 1403526                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshPVUGens.so
+7f16e0645000-7f16e0844000 ---p 00013000 08:05 1403526                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshPVUGens.so
+7f16e0844000-7f16e0845000 r--p 00012000 08:05 1403526                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshPVUGens.so
+7f16e0845000-7f16e0846000 rw-p 00013000 08:05 1403526                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshPVUGens.so
+7f16e0846000-7f16e0852000 rw-p 00000000 00:00 0 
+7f16e0852000-7f16e0855000 r-xp 00000000 08:05 1403554                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VOSIM.so
+7f16e0855000-7f16e0a54000 ---p 00003000 08:05 1403554                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VOSIM.so
+7f16e0a54000-7f16e0a55000 r--p 00002000 08:05 1403554                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VOSIM.so
+7f16e0a55000-7f16e0a56000 rw-p 00003000 08:05 1403554                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VOSIM.so
+7f16e0a56000-7f16e0a58000 r-xp 00000000 08:05 1403541                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f16e0a58000-7f16e0c57000 ---p 00002000 08:05 1403541                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f16e0c57000-7f16e0c58000 r--p 00001000 08:05 1403541                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f16e0c58000-7f16e0c59000 rw-p 00002000 08:05 1403541                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f16e0c59000-7f16e0c5b000 r-xp 00000000 08:05 1403533                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f16e0c5b000-7f16e0e5a000 ---p 00002000 08:05 1403533                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f16e0e5a000-7f16e0e5b000 r--p 00001000 08:05 1403533                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f16e0e5b000-7f16e0e5c000 rw-p 00002000 08:05 1403533                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f16e0e5c000-7f16e0e5f000 r-xp 00000000 08:05 1403540                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTreeUGens.so
+7f16e0e5f000-7f16e105e000 ---p 00003000 08:05 1403540                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTreeUGens.so
+7f16e105e000-7f16e105f000 r--p 00002000 08:05 1403540                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTreeUGens.so
+7f16e105f000-7f16e1060000 rw-p 00003000 08:05 1403540                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDTreeUGens.so
+7f16e1060000-7f16e1064000 r-xp 00000000 08:05 1403539                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDSOMUGens.so
+7f16e1064000-7f16e1263000 ---p 00004000 08:05 1403539                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDSOMUGens.so
+7f16e1263000-7f16e1264000 r--p 00003000 08:05 1403539                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDSOMUGens.so
+7f16e1264000-7f16e1265000 rw-p 00004000 08:05 1403539                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDSOMUGens.so
+7f16e1265000-7f16e1268000 r-xp 00000000 08:05 1403560                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DynNoiseUGens.so
+7f16e1268000-7f16e1467000 ---p 00003000 08:05 1403560                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DynNoiseUGens.so
+7f16e1467000-7f16e1468000 r--p 00002000 08:05 1403560                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DynNoiseUGens.so
+7f16e1468000-7f16e1469000 rw-p 00003000 08:05 1403560                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DynNoiseUGens.so
+7f16e1469000-7f16e1471000 r-xp 00000000 08:05 1403553                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VBAP.so
+7f16e1471000-7f16e1670000 ---p 00008000 08:05 1403553                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VBAP.so
+7f16e1670000-7f16e1671000 r--p 00007000 08:05 1403553                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VBAP.so
+7f16e1671000-7f16e1672000 rw-p 00008000 08:05 1403553                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/VBAP.so
+7f16e1672000-7f16e1674000 r-xp 00000000 08:05 1403581                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnpackFFTUGens.so
+7f16e1674000-7f16e1873000 ---p 00002000 08:05 1403581                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnpackFFTUGens.so
+7f16e1873000-7f16e1874000 r--p 00001000 08:05 1403581                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnpackFFTUGens.so
+7f16e1874000-7f16e1875000 rw-p 00002000 08:05 1403581                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnpackFFTUGens.so
+7f16e1875000-7f16e1881000 rw-p 00000000 00:00 0 
+7f16e1881000-7f16e188b000 r-xp 00000000 08:05 1403569                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ML_UGens.so
+7f16e188b000-7f16e1a8a000 ---p 0000a000 08:05 1403569                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ML_UGens.so
+7f16e1a8a000-7f16e1a8b000 r--p 00009000 08:05 1403569                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ML_UGens.so
+7f16e1a8b000-7f16e1a93000 rw-p 0000a000 08:05 1403569                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ML_UGens.so
+7f16e1a93000-7f16e1acf000 rw-p 00000000 00:00 0 
+7f16e1acf000-7f16e1ae0000 r-xp 00000000 08:05 1403573                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/OscUGens.so
+7f16e1ae0000-7f16e1cdf000 ---p 00011000 08:05 1403573                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/OscUGens.so
+7f16e1cdf000-7f16e1ce0000 r--p 00010000 08:05 1403573                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/OscUGens.so
+7f16e1ce0000-7f16e1ce1000 rw-p 00011000 08:05 1403573                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/OscUGens.so
+7f16e1ce1000-7f16e1ce8000 r-xp 00000000 08:05 1403556                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ChaosUGens.so
+7f16e1ce8000-7f16e1ee7000 ---p 00007000 08:05 1403556                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ChaosUGens.so
+7f16e1ee7000-7f16e1ee8000 r--p 00006000 08:05 1403556                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ChaosUGens.so
+7f16e1ee8000-7f16e1ee9000 rw-p 00007000 08:05 1403556                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/ChaosUGens.so
+7f16e1ee9000-7f16e1efb000 r-xp 00000000 08:05 1403567                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LFUGens.so
+7f16e1efb000-7f16e20fb000 ---p 00012000 08:05 1403567                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LFUGens.so
+7f16e20fb000-7f16e20fc000 r--p 00012000 08:05 1403567                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LFUGens.so
+7f16e20fc000-7f16e20fd000 rw-p 00013000 08:05 1403567                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LFUGens.so
+7f16e20fd000-7f16e210f000 r-xp 00000000 08:05 1403513                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BerlachUGens.so
+7f16e210f000-7f16e230e000 ---p 00012000 08:05 1403513                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BerlachUGens.so
+7f16e230e000-7f16e230f000 r--p 00011000 08:05 1403513                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BerlachUGens.so
+7f16e230f000-7f16e2310000 rw-p 00012000 08:05 1403513                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BerlachUGens.so
+7f16e2310000-7f16e2314000 r-xp 00000000 08:05 1403511                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatUGens.so
+7f16e2314000-7f16e2513000 ---p 00004000 08:05 1403511                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatUGens.so
+7f16e2513000-7f16e2514000 r--p 00003000 08:05 1403511                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatUGens.so
+7f16e2514000-7f16e2515000 rw-p 00004000 08:05 1403511                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BatUGens.so
+7f16e2515000-7f16e251c000 r-xp 00000000 08:05 1403514                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BetablockerUGens.so
+7f16e251c000-7f16e271b000 ---p 00007000 08:05 1403514                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BetablockerUGens.so
+7f16e271b000-7f16e271c000 r--p 00006000 08:05 1403514                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BetablockerUGens.so
+7f16e271c000-7f16e271d000 rw-p 00007000 08:05 1403514                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BetablockerUGens.so
+7f16e271d000-7f16e2738000 r-xp 00000000 08:05 1403508                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AtkUGens.so
+7f16e2738000-7f16e2938000 ---p 0001b000 08:05 1403508                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AtkUGens.so
+7f16e2938000-7f16e2939000 r--p 0001b000 08:05 1403508                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AtkUGens.so
+7f16e2939000-7f16e293a000 rw-p 0001c000 08:05 1403508                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/AtkUGens.so
+7f16e293a000-7f16e2944000 r-xp 00000000 08:05 1403534                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFFTUGens.so
+7f16e2944000-7f16e2b43000 ---p 0000a000 08:05 1403534                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFFTUGens.so
+7f16e2b43000-7f16e2b44000 r--p 00009000 08:05 1403534                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFFTUGens.so
+7f16e2b44000-7f16e2b45000 rw-p 0000a000 08:05 1403534                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDFFTUGens.so
+7f16e2b45000-7f16e2b51000 rw-p 00000000 00:00 0 
+7f16e2b51000-7f16e2b54000 r-xp 00000000 08:05 1403531                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f16e2b54000-7f16e2d53000 ---p 00003000 08:05 1403531                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f16e2d53000-7f16e2d54000 r--p 00002000 08:05 1403531                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f16e2d54000-7f16e2d55000 rw-p 00003000 08:05 1403531                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f16e2d55000-7f16e2d61000 rw-p 00000000 00:00 0 
+7f16e2d61000-7f16e2d6f000 r-xp 00000000 08:05 1403548                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SLUGens.so
+7f16e2d6f000-7f16e2f6e000 ---p 0000e000 08:05 1403548                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SLUGens.so
+7f16e2f6e000-7f16e2f6f000 r--p 0000d000 08:05 1403548                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SLUGens.so
+7f16e2f6f000-7f16e2f70000 rw-p 0000e000 08:05 1403548                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SLUGens.so
+7f16e2f70000-7f16e2f73000 r-xp 00000000 08:05 1403543                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MembraneUGens.so
+7f16e2f73000-7f16e3172000 ---p 00003000 08:05 1403543                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MembraneUGens.so
+7f16e3172000-7f16e3173000 r--p 00002000 08:05 1403543                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MembraneUGens.so
+7f16e3173000-7f16e3174000 rw-p 00003000 08:05 1403543                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MembraneUGens.so
+7f16e3174000-7f16e317c000 r-xp 00000000 08:05 1403552                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TJUGens.so
+7f16e317c000-7f16e337b000 ---p 00008000 08:05 1403552                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TJUGens.so
+7f16e337b000-7f16e337c000 r--p 00007000 08:05 1403552                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TJUGens.so
+7f16e337c000-7f16e337d000 rw-p 00008000 08:05 1403552                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TJUGens.so
+7f16e337d000-7f16e3383000 r-xp 00000000 08:05 1403565                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/IOUGens.so
+7f16e3383000-7f16e3583000 ---p 00006000 08:05 1403565                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/IOUGens.so
+7f16e3583000-7f16e3584000 r--p 00006000 08:05 1403565                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/IOUGens.so
+7f16e3584000-7f16e3585000 rw-p 00007000 08:05 1403565                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/IOUGens.so
+7f16e3585000-7f16e3588000 r-xp 00000000 08:05 1403550                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SummerUGens.so
+7f16e3588000-7f16e3788000 ---p 00003000 08:05 1403550                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SummerUGens.so
+7f16e3788000-7f16e3789000 r--p 00003000 08:05 1403550                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SummerUGens.so
+7f16e3789000-7f16e378a000 rw-p 00004000 08:05 1403550                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/SummerUGens.so
+7f16e378a000-7f16e3797000 r-xp 00000000 08:05 1403544                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NCAnalysisUGens.so
+7f16e3797000-7f16e3996000 ---p 0000d000 08:05 1403544                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NCAnalysisUGens.so
+7f16e3996000-7f16e3997000 r--p 0000c000 08:05 1403544                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NCAnalysisUGens.so
+7f16e3997000-7f16e3998000 rw-p 0000d000 08:05 1403544                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/NCAnalysisUGens.so
+7f16e3998000-7f16e39e3000 rw-p 00000000 00:00 0 
+7f16e39e3000-7f16e39e9000 r-xp 00000000 08:05 1403512                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BBCut2UGens.so
+7f16e39e9000-7f16e3be8000 ---p 00006000 08:05 1403512                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BBCut2UGens.so
+7f16e3be8000-7f16e3be9000 r--p 00005000 08:05 1403512                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BBCut2UGens.so
+7f16e3be9000-7f16e3beb000 rw-p 00006000 08:05 1403512                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BBCut2UGens.so
+7f16e3beb000-7f16e3bee000 r-xp 00000000 08:05 1403529                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LoopBuf.so
+7f16e3bee000-7f16e3ded000 ---p 00003000 08:05 1403529                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LoopBuf.so
+7f16e3ded000-7f16e3dee000 r--p 00002000 08:05 1403529                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LoopBuf.so
+7f16e3dee000-7f16e3def000 rw-p 00003000 08:05 1403529                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LoopBuf.so
+7f16e3def000-7f16e3dff000 r-xp 00000000 08:05 1403524                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshAmbiUGens.so
+7f16e3dff000-7f16e3ffe000 ---p 00010000 08:05 1403524                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshAmbiUGens.so
+7f16e3ffe000-7f16e3fff000 r--p 0000f000 08:05 1403524                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshAmbiUGens.so
+7f16e3fff000-7f16e4000000 rw-p 00010000 08:05 1403524                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/JoshAmbiUGens.so
+7f16e4000000-7f16e4021000 rw-p 00000000 00:00 0 
+7f16e4021000-7f16e8000000 ---p 00000000 00:00 0 
+7f16e80e2000-7f16e80e5000 ---p 00000000 00:00 0 
+7f16e80e5000-7f16e81e3000 rw-p 00000000 00:00 0 
+7f16e81e3000-7f16e81ef000 r-xp 00000000 08:05 1403561                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FFT_UGens.so
+7f16e81ef000-7f16e83ef000 ---p 0000c000 08:05 1403561                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FFT_UGens.so
+7f16e83ef000-7f16e83f0000 r--p 0000c000 08:05 1403561                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FFT_UGens.so
+7f16e83f0000-7f16e83f1000 rw-p 0000d000 08:05 1403561                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FFT_UGens.so
+7f16e83f1000-7f16e8421000 rw-p 00000000 00:00 0 
+7f16e8421000-7f16e8424000 r-xp 00000000 08:05 1403522                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DistortionUGens.so
+7f16e8424000-7f16e8623000 ---p 00003000 08:05 1403522                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DistortionUGens.so
+7f16e8623000-7f16e8624000 r--p 00002000 08:05 1403522                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DistortionUGens.so
+7f16e8624000-7f16e8625000 rw-p 00003000 08:05 1403522                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DistortionUGens.so
+7f16e8625000-7f16e862b000 r-xp 00000000 08:05 1403571                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MulAddUGens.so
+7f16e862b000-7f16e882a000 ---p 00006000 08:05 1403571                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MulAddUGens.so
+7f16e882a000-7f16e882b000 r--p 00005000 08:05 1403571                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MulAddUGens.so
+7f16e882b000-7f16e882c000 rw-p 00006000 08:05 1403571                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/MulAddUGens.so
+7f16e882c000-7f16e8848000 r-xp 00000000 08:05 1403562                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FilterUGens.so
+7f16e8848000-7f16e8a47000 ---p 0001c000 08:05 1403562                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FilterUGens.so
+7f16e8a47000-7f16e8a48000 r--p 0001b000 08:05 1403562                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FilterUGens.so
+7f16e8a48000-7f16e8a49000 rw-p 0001c000 08:05 1403562                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/FilterUGens.so
+7f16e8a49000-7f16e8a4c000 r-xp 00000000 08:05 1403563                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GendynUGens.so
+7f16e8a4c000-7f16e8c4b000 ---p 00003000 08:05 1403563                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GendynUGens.so
+7f16e8c4b000-7f16e8c4c000 r--p 00002000 08:05 1403563                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GendynUGens.so
+7f16e8c4c000-7f16e8c4d000 rw-p 00003000 08:05 1403563                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GendynUGens.so
+7f16e8c4d000-7f16e8c58000 r-xp 00000000 08:05 1403515                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobChaos.so
+7f16e8c58000-7f16e8e57000 ---p 0000b000 08:05 1403515                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobChaos.so
+7f16e8e57000-7f16e8e58000 r--p 0000a000 08:05 1403515                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobChaos.so
+7f16e8e58000-7f16e8e59000 rw-p 0000b000 08:05 1403515                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobChaos.so
+7f16e8e59000-7f16e8e71000 r-xp 00000000 08:05 1403564                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GrainUGens.so
+7f16e8e71000-7f16e9070000 ---p 00018000 08:05 1403564                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GrainUGens.so
+7f16e9070000-7f16e9071000 r--p 00017000 08:05 1403564                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GrainUGens.so
+7f16e9071000-7f16e9072000 rw-p 00018000 08:05 1403564                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GrainUGens.so
+7f16e9072000-7f16e9074000 r-xp 00000000 08:05 1403528                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LadspaUGen.so
+7f16e9074000-7f16e9274000 ---p 00002000 08:05 1403528                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LadspaUGen.so
+7f16e9274000-7f16e9275000 r--p 00002000 08:05 1403528                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LadspaUGen.so
+7f16e9275000-7f16e9276000 rw-p 00003000 08:05 1403528                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/LadspaUGen.so
+7f16e9276000-7f16e92a4000 r-xp 00000000 08:05 1403557                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DelayUGens.so
+7f16e92a4000-7f16e94a4000 ---p 0002e000 08:05 1403557                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DelayUGens.so
+7f16e94a4000-7f16e94a5000 r--p 0002e000 08:05 1403557                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DelayUGens.so
+7f16e94a5000-7f16e94a6000 rw-p 0002f000 08:05 1403557                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DelayUGens.so
+7f16e94a6000-7f16e94a9000 r-xp 00000000 08:05 1403523                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GlitchUGens.so
+7f16e94a9000-7f16e96a8000 ---p 00003000 08:05 1403523                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GlitchUGens.so
+7f16e96a8000-7f16e96a9000 r--p 00002000 08:05 1403523                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GlitchUGens.so
+7f16e96a9000-7f16e96aa000 rw-p 00003000 08:05 1403523                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/GlitchUGens.so
+7f16e96aa000-7f16e96ac000 r-xp 00000000 08:05 1403578                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TestUGens.so
+7f16e96ac000-7f16e98ab000 ---p 00002000 08:05 1403578                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TestUGens.so
+7f16e98ab000-7f16e98ac000 r--p 00001000 08:05 1403578                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TestUGens.so
+7f16e98ac000-7f16e98ad000 rw-p 00002000 08:05 1403578                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/TestUGens.so
+7f16e98ad000-7f16e98af000 r-xp 00000000 08:05 1403575                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f16e98af000-7f16e9aae000 ---p 00002000 08:05 1403575                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f16e9aae000-7f16e9aaf000 r--p 00001000 08:05 1403575                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f16e9aaf000-7f16e9ab0000 rw-p 00002000 08:05 1403575                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f16e9ab0000-7f16e9ae2000 r-xp 00000000 08:05 1403555                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BinaryOpUGens.so
+7f16e9ae2000-7f16e9ce2000 ---p 00032000 08:05 1403555                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BinaryOpUGens.so
+7f16e9ce2000-7f16e9ce3000 r--p 00032000 08:05 1403555                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BinaryOpUGens.so
+7f16e9ce3000-7f16e9ce4000 rw-p 00033000 08:05 1403555                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BinaryOpUGens.so
+7f16e9ce4000-7f16e9cf7000 r-xp 00000000 08:05 1403580                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnaryOpUGens.so
+7f16e9cf7000-7f16e9ef7000 ---p 00013000 08:05 1403580                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnaryOpUGens.so
+7f16e9ef7000-7f16e9ef8000 r--p 00013000 08:05 1403580                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnaryOpUGens.so
+7f16e9ef8000-7f16e9ef9000 rw-p 00014000 08:05 1403580                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/UnaryOpUGens.so
+7f16e9ef9000-7f16e9f05000 r-xp 00000000 08:05 1403558                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DemandUGens.so
+7f16e9f05000-7f16ea105000 ---p 0000c000 08:05 1403558                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DemandUGens.so
+7f16ea105000-7f16ea106000 r--p 0000c000 08:05 1403558                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DemandUGens.so
+7f16ea106000-7f16ea107000 rw-p 0000d000 08:05 1403558                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/DemandUGens.so
+7f16ea107000-7f16ea1c9000 r-xp 00000000 08:05 1403549                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/StkUGens.so
+7f16ea1c9000-7f16ea3c8000 ---p 000c2000 08:05 1403549                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/StkUGens.so
+7f16ea3c8000-7f16ea3cc000 r--p 000c1000 08:05 1403549                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/StkUGens.so
+7f16ea3cc000-7f16ea3d1000 rw-p 000c5000 08:05 1403549                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/StkUGens.so
+7f16ea3d1000-7f16ea3d6000 r-xp 00000000 08:05 1403516                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFFT.so
+7f16ea3d6000-7f16ea5d5000 ---p 00005000 08:05 1403516                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFFT.so
+7f16ea5d5000-7f16ea5d6000 r--p 00004000 08:05 1403516                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFFT.so
+7f16ea5d6000-7f16ea5d7000 rw-p 00005000 08:05 1403516                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/BhobFFT.so
+7f16ea5d7000-7f16ea5e3000 rw-p 00000000 00:00 0 
+7f16ea5e3000-7f16ea5e6000 ---p 00000000 00:00 0 
+7f16ea5e6000-7f16ea6e4000 rw-p 00000000 00:00 0 
+7f16ea6e4000-7f16ea6e7000 ---p 00000000 00:00 0 
+7f16ea6e7000-7f16ea7e5000 rw-p 00000000 00:00 0 
+7f16ea7e5000-7f16ea7ee000 r-xp 00000000 08:05 2883923                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libmanagement.so
+7f16ea7ee000-7f16ea9ed000 ---p 00009000 08:05 2883923                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libmanagement.so
+7f16ea9ed000-7f16ea9ee000 rw-p 00008000 08:05 2883923                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libmanagement.so
+7f16ea9ee000-7f16eaa2e000 rw-p 00000000 00:00 0 
+7f16eaa2e000-7f16eabee000 ---p 00000000 00:00 0 
+7f16eabee000-7f16eac05000 r-xp 00000000 08:05 4326507                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f16eac05000-7f16eae05000 ---p 00017000 08:05 4326507                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f16eae05000-7f16eae06000 r--p 00017000 08:05 4326507                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f16eae06000-7f16eae07000 rw-p 00018000 08:05 4326507                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f16eae07000-7f16eae09000 rw-p 00000000 00:00 0 
+7f16eae09000-7f16eae0e000 r-xp 00000000 08:05 917773                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f16eae0e000-7f16eb00d000 ---p 00005000 08:05 917773                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f16eb00d000-7f16eb00e000 r--p 00004000 08:05 917773                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f16eb00e000-7f16eb00f000 rw-p 00005000 08:05 917773                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f16eb00f000-7f16eb017000 r-xp 00000000 08:05 4329923                    /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f16eb017000-7f16eb216000 ---p 00008000 08:05 4329923                    /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f16eb216000-7f16eb217000 r--p 00007000 08:05 4329923                    /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f16eb217000-7f16eb218000 rw-p 00008000 08:05 4329923                    /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f16eb218000-7f16eb219000 rw-p 00000000 00:00 0 
+7f16eb219000-7f16eb293000 r-xp 00000000 08:05 1180810                    /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-8.0.so
+7f16eb293000-7f16eb492000 ---p 0007a000 08:05 1180810                    /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-8.0.so
+7f16eb492000-7f16eb493000 r--p 00079000 08:05 1180810                    /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-8.0.so
+7f16eb493000-7f16eb494000 rw-p 0007a000 08:05 1180810                    /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-8.0.so
+7f16eb494000-7f16eb49e000 r-xp 00000000 08:05 4326749                    /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+7f16eb49e000-7f16eb69d000 ---p 0000a000 08:05 4326749                    /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+7f16eb69d000-7f16eb69e000 r--p 00009000 08:05 4326749                    /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+7f16eb69e000-7f16eb69f000 rw-p 0000a000 08:05 4326749                    /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+7f16eb69f000-7f16eb6ed000 r-xp 00000000 08:05 920853                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.19.0
+7f16eb6ed000-7f16eb8ed000 ---p 0004e000 08:05 920853                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.19.0
+7f16eb8ed000-7f16eb8ee000 r--p 0004e000 08:05 920853                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.19.0
+7f16eb8ee000-7f16eb8ef000 rw-p 0004f000 08:05 920853                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.19.0
+7f16eb8f1000-7f16ebaf1000 rw-p 00000000 00:00 0 
+7f16ebaf1000-7f16ebbea000 r-xp 00000000 08:05 922989                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f16ebbea000-7f16ebde9000 ---p 000f9000 08:05 922989                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f16ebde9000-7f16ebdf0000 r--p 000f8000 08:05 922989                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f16ebdf0000-7f16ebdf1000 rw-p 000ff000 08:05 922989                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f16ebdf1000-7f16ebe00000 r-xp 00000000 08:05 2883942                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsoundalsa.so
+7f16ebe00000-7f16ebfff000 ---p 0000f000 08:05 2883942                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsoundalsa.so
+7f16ebfff000-7f16ec000000 rw-p 0000e000 08:05 2883942                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsoundalsa.so
+7f16ec000000-7f16ec021000 rw-p 00000000 00:00 0 
+7f16ec021000-7f16f0000000 ---p 00000000 00:00 0 
+7f16f0093000-7f16f0094000 r-xp 00000000 08:05 2883917                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsound.so
+7f16f0094000-7f16f0293000 ---p 00001000 08:05 2883917                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsound.so
+7f16f0293000-7f16f0294000 rw-p 00000000 08:05 2883917                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjsound.so
+7f16f0294000-7f16f0297000 ---p 00000000 00:00 0 
+7f16f0297000-7f16f0595000 rw-p 00000000 00:00 0 
+7f16f0595000-7f16f0795000 rw-p 00000000 00:00 0 
+7f16f0795000-7f16f0798000 ---p 00000000 00:00 0 
+7f16f0798000-7f16f0a96000 rw-p 00000000 00:00 0 
+7f16f0a96000-7f16f0a99000 ---p 00000000 00:00 0 
+7f16f0a99000-7f16f0b97000 rw-p 00000000 00:00 0 
+7f16f0b97000-7f16f0b9a000 ---p 00000000 00:00 0 
+7f16f0b9a000-7f16f0c98000 rw-p 00000000 00:00 0 
+7f16f0c98000-7f16f0c9b000 ---p 00000000 00:00 0 
+7f16f0c9b000-7f16f0d99000 rw-p 00000000 00:00 0 
+7f16f0d99000-7f16f0d9c000 ---p 00000000 00:00 0 
+7f16f0d9c000-7f16f0e9a000 rw-p 00000000 00:00 0 
+7f16f0e9a000-7f16f0e9d000 ---p 00000000 00:00 0 
+7f16f0e9d000-7f16f0f9b000 rw-p 00000000 00:00 0 
+7f16f0f9b000-7f16f0f9e000 ---p 00000000 00:00 0 
+7f16f0f9e000-7f16f109c000 rw-p 00000000 00:00 0 
+7f16f109c000-7f16f109f000 ---p 00000000 00:00 0 
+7f16f109f000-7f16f119d000 rw-p 00000000 00:00 0 
+7f16f119d000-7f16f11a0000 ---p 00000000 00:00 0 
+7f16f11a0000-7f16f129e000 rw-p 00000000 00:00 0 
+7f16f129e000-7f16f12a1000 ---p 00000000 00:00 0 
+7f16f12a1000-7f16f159f000 rw-p 00000000 00:00 0 
+7f16f159f000-7f16f15a2000 ---p 00000000 00:00 0 
+7f16f15a2000-7f16f16a0000 rw-p 00000000 00:00 0 
+7f16f16a0000-7f16f16a3000 ---p 00000000 00:00 0 
+7f16f16a3000-7f16f17a1000 rw-p 00000000 00:00 0 
+7f16f17a1000-7f16f17a4000 ---p 00000000 00:00 0 
+7f16f17a4000-7f16f1aa2000 rw-p 00000000 00:00 0 
+7f16f1aa2000-7f16f1aa5000 ---p 00000000 00:00 0 
+7f16f1aa5000-7f16f1ba3000 rw-p 00000000 00:00 0 
+7f16f1ba3000-7f16f1ba6000 ---p 00000000 00:00 0 
+7f16f1ba6000-7f16f1ea4000 rw-p 00000000 00:00 0 
+7f16f1ea4000-7f16f1ea7000 ---p 00000000 00:00 0 
+7f16f1ea7000-7f16f1fa5000 rw-p 00000000 00:00 0 
+7f16f1fa5000-7f16f1fa8000 ---p 00000000 00:00 0 
+7f16f1fa8000-7f16f20a6000 rw-p 00000000 00:00 0 
+7f16f20a6000-7f16f20b8000 r-xp 00000000 08:05 4326512                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f16f20b8000-7f16f22b8000 ---p 00012000 08:05 4326512                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f16f22b8000-7f16f22b9000 r--p 00012000 08:05 4326512                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f16f22b9000-7f16f22ba000 rw-p 00013000 08:05 4326512                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f16f22ba000-7f16f2328000 r-xp 00000000 08:05 4326918                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f16f2328000-7f16f2528000 ---p 0006e000 08:05 4326918                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f16f2528000-7f16f2529000 r--p 0006e000 08:05 4326918                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f16f2529000-7f16f252a000 rw-p 0006f000 08:05 4326918                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f16f252a000-7f16f2602000 r-xp 00000000 08:05 4326516                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f16f2602000-7f16f2801000 ---p 000d8000 08:05 4326516                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f16f2801000-7f16f2802000 r--p 000d7000 08:05 4326516                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f16f2802000-7f16f280a000 rw-p 000d8000 08:05 4326516                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f16f280a000-7f16f280b000 rw-p 00000000 00:00 0 
+7f16f280b000-7f16f282c000 r-xp 00000000 08:05 4329810                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f16f282c000-7f16f2a2b000 ---p 00021000 08:05 4329810                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f16f2a2b000-7f16f2a2c000 r--p 00020000 08:05 4329810                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f16f2a2c000-7f16f2a2d000 rw-p 00021000 08:05 4329810                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f16f2a2d000-7f16f2a4c000 r-xp 00000000 08:05 4326563                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f16f2a4c000-7f16f2c4b000 ---p 0001f000 08:05 4326563                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f16f2c4b000-7f16f2c4c000 r--p 0001e000 08:05 4326563                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f16f2c4c000-7f16f2c4d000 rw-p 0001f000 08:05 4326563                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f16f2c4d000-7f16f2c4f000 rw-p 00000000 00:00 0 
+7f16f2c4f000-7f16f2c79000 r-xp 00000000 08:05 926191                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f16f2c79000-7f16f2e79000 ---p 0002a000 08:05 926191                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f16f2e79000-7f16f2e7a000 r--p 0002a000 08:05 926191                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f16f2e7a000-7f16f2e7b000 rw-p 0002b000 08:05 926191                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f16f2e7b000-7f16f2e82000 r-xp 00000000 08:05 924881                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f16f2e82000-7f16f3082000 ---p 00007000 08:05 924881                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f16f3082000-7f16f3083000 r--p 00007000 08:05 924881                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f16f3083000-7f16f3084000 rw-p 00008000 08:05 924881                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f16f3084000-7f16f3104000 r-xp 00000000 08:05 4325711                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f16f3104000-7f16f3107000 r--p 0007f000 08:05 4325711                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f16f3107000-7f16f3108000 rw-p 00082000 08:05 4325711                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f16f3108000-7f16f3109000 rw-p 00000000 00:00 0 
+7f16f3109000-7f16f3196000 r-xp 00000000 08:05 926039                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.11
+7f16f3196000-7f16f3395000 ---p 0008d000 08:05 926039                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.11
+7f16f3395000-7f16f33b1000 r--p 0008c000 08:05 926039                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.11
+7f16f33b1000-7f16f33b2000 rw-p 000a8000 08:05 926039                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.11
+7f16f33b2000-7f16f3425000 r-xp 00000000 08:05 925976                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+7f16f3425000-7f16f3625000 ---p 00073000 08:05 925976                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+7f16f3625000-7f16f3626000 r--p 00073000 08:05 925976                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+7f16f3626000-7f16f3627000 rw-p 00074000 08:05 925976                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+7f16f3627000-7f16f3671000 r-xp 00000000 08:05 4326622                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f16f3671000-7f16f3871000 ---p 0004a000 08:05 4326622                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f16f3871000-7f16f3872000 r--p 0004a000 08:05 4326622                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f16f3872000-7f16f3873000 rw-p 0004b000 08:05 4326622                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f16f3873000-7f16f39e5000 r-xp 00000000 08:05 917628                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f16f39e5000-7f16f3be5000 ---p 00172000 08:05 917628                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f16f3be5000-7f16f3bef000 r--p 00172000 08:05 917628                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f16f3bef000-7f16f3bf1000 rw-p 0017c000 08:05 917628                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f16f3bf1000-7f16f3bf5000 rw-p 00000000 00:00 0 
+7f16f3bf5000-7f16f3dec000 r-xp 00000000 08:05 926818                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.4.4
+7f16f3dec000-7f16f3feb000 ---p 001f7000 08:05 926818                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.4.4
+7f16f3feb000-7f16f3fff000 r--p 001f6000 08:05 926818                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.4.4
+7f16f3fff000-7f16f4000000 rw-p 0020a000 08:05 926818                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.4.4
+7f16f4000000-7f16f4021000 rw-p 00000000 00:00 0 
+7f16f4021000-7f16f8000000 ---p 00000000 00:00 0 
+7f16f8006000-7f16f804c000 r-xp 00000000 08:05 926210                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f16f804c000-7f16f824c000 ---p 00046000 08:05 926210                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f16f824c000-7f16f824e000 r--p 00046000 08:05 926210                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f16f824e000-7f16f824f000 rw-p 00048000 08:05 926210                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f16f824f000-7f16f82b1000 r-xp 00000000 08:05 926313                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f16f82b1000-7f16f84b1000 ---p 00062000 08:05 926313                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f16f84b1000-7f16f84b3000 r--p 00062000 08:05 926313                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f16f84b3000-7f16f84b4000 rw-p 00064000 08:05 926313                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f16f84b4000-7f16f84b8000 rw-p 00000000 00:00 0 
+7f16f84b8000-7f16f84c8000 r-xp 00000000 08:05 921340                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f16f84c8000-7f16f86c7000 ---p 00010000 08:05 921340                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f16f86c7000-7f16f86c8000 r--p 0000f000 08:05 921340                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f16f86c8000-7f16f86c9000 rw-p 00010000 08:05 921340                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f16f86c9000-7f16f86d4000 r-xp 00000000 08:05 921331                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f16f86d4000-7f16f88d3000 ---p 0000b000 08:05 921331                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f16f88d3000-7f16f88d4000 r--p 0000a000 08:05 921331                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f16f88d4000-7f16f88d5000 rw-p 0000b000 08:05 921331                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f16f88d5000-7f16f8937000 r-xp 00000000 08:05 1403568                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/libscsynth.so
+7f16f8937000-7f16f8b37000 ---p 00062000 08:05 1403568                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/libscsynth.so
+7f16f8b37000-7f16f8b39000 r--p 00062000 08:05 1403568                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/libscsynth.so
+7f16f8b39000-7f16f8b3b000 rw-p 00064000 08:05 1403568                    /home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64/libscsynth.so
+7f16f8b3b000-7f16f8b5b000 rw-p 00000000 00:00 0 
+7f16f8b5b000-7f16f8b72000 r-xp 00000000 08:05 666582                     /tmp/jna/jna6771472764619916709.tmp (deleted)
+7f16f8b72000-7f16f8d71000 ---p 00017000 08:05 666582                     /tmp/jna/jna6771472764619916709.tmp (deleted)
+7f16f8d71000-7f16f8d72000 r--p 00016000 08:05 666582                     /tmp/jna/jna6771472764619916709.tmp (deleted)
+7f16f8d72000-7f16f8d73000 rw-p 00017000 08:05 666582                     /tmp/jna/jna6771472764619916709.tmp (deleted)
+7f16f8d73000-7f16f8f73000 rw-p 00000000 00:00 0 
+7f16f8f73000-7f16f8f76000 ---p 00000000 00:00 0 
+7f16f8f76000-7f16f9274000 rw-p 00000000 00:00 0 
+7f16f9274000-7f16f928a000 r-xp 00000000 08:05 2883915                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnet.so
+7f16f928a000-7f16f948a000 ---p 00016000 08:05 2883915                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnet.so
+7f16f948a000-7f16f948b000 rw-p 00016000 08:05 2883915                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnet.so
+7f16f948b000-7f16f949c000 r-xp 00000000 08:05 2883932                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnio.so
+7f16f949c000-7f16f969b000 ---p 00011000 08:05 2883932                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnio.so
+7f16f969b000-7f16f969c000 rw-p 00010000 08:05 2883932                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libnio.so
+7f16f969c000-7f16f989c000 rw-p 00000000 00:00 0 
+7f16f989c000-7f16f989f000 ---p 00000000 00:00 0 
+7f16f989f000-7f16f999d000 rw-p 00000000 00:00 0 
+7f16f999d000-7f16f99a2000 r-xp 00000000 08:05 921958                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f16f99a2000-7f16f9ba1000 ---p 00005000 08:05 921958                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f16f9ba1000-7f16f9ba2000 r--p 00004000 08:05 921958                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f16f9ba2000-7f16f9ba3000 rw-p 00005000 08:05 921958                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f16f9ba3000-7f16f9bac000 r-xp 00000000 08:05 925967                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f16f9bac000-7f16f9dab000 ---p 00009000 08:05 925967                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f16f9dab000-7f16f9dac000 r--p 00008000 08:05 925967                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f16f9dac000-7f16f9dad000 rw-p 00009000 08:05 925967                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f16f9dad000-7f16f9fad000 rw-p 00000000 00:00 0 
+7f16f9fad000-7f16f9fb0000 ---p 00000000 00:00 0 
+7f16f9fb0000-7f16fa0ae000 rw-p 00000000 00:00 0 
+7f16fa0ae000-7f16fa0c4000 r-xp 00000000 08:05 4326728                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f16fa0c4000-7f16fa2c3000 ---p 00016000 08:05 4326728                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f16fa2c3000-7f16fa2c4000 rw-p 00015000 08:05 4326728                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f16fa2c4000-7f16fa329000 r-xp 00000000 08:05 2883945                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libfontmanager.so
+7f16fa329000-7f16fa528000 ---p 00065000 08:05 2883945                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libfontmanager.so
+7f16fa528000-7f16fa52d000 rw-p 00064000 08:05 2883945                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libfontmanager.so
+7f16fa52d000-7f16fa53d000 rw-p 00000000 00:00 0 
+7f16fa53d000-7f16fa542000 r-xp 00000000 08:05 920157                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f16fa542000-7f16fa741000 ---p 00005000 08:05 920157                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f16fa741000-7f16fa742000 r--p 00004000 08:05 920157                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f16fa742000-7f16fa743000 rw-p 00005000 08:05 920157                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f16fa743000-7f16fa745000 r-xp 00000000 08:05 925960                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f16fa745000-7f16fa945000 ---p 00002000 08:05 925960                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f16fa945000-7f16fa946000 r--p 00002000 08:05 925960                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f16fa946000-7f16fa947000 rw-p 00003000 08:05 925960                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f16fa947000-7f16fa968000 r-xp 00000000 08:05 920198                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f16fa968000-7f16fab67000 ---p 00021000 08:05 920198                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f16fab67000-7f16fab68000 r--p 00020000 08:05 920198                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f16fab68000-7f16fab69000 rw-p 00021000 08:05 920198                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f16fab69000-7f16fab78000 r-xp 00000000 08:05 923711                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f16fab78000-7f16fad77000 ---p 0000f000 08:05 923711                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f16fad77000-7f16fad78000 r--p 0000e000 08:05 923711                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f16fad78000-7f16fad79000 rw-p 0000f000 08:05 923711                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f16fad79000-7f16fad7e000 r-xp 00000000 08:05 926001                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f16fad7e000-7f16faf7d000 ---p 00005000 08:05 926001                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f16faf7d000-7f16faf7e000 r--p 00004000 08:05 926001                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f16faf7e000-7f16faf7f000 rw-p 00005000 08:05 926001                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f16faf7f000-7f16faf88000 r-xp 00000000 08:05 925682                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f16faf88000-7f16fb187000 ---p 00009000 08:05 925682                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f16fb187000-7f16fb188000 r--p 00008000 08:05 925682                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f16fb188000-7f16fb189000 rw-p 00009000 08:05 925682                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f16fb189000-7f16fb2be000 r-xp 00000000 08:05 920214                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f16fb2be000-7f16fb4be000 ---p 00135000 08:05 920214                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f16fb4be000-7f16fb4bf000 r--p 00135000 08:05 920214                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f16fb4bf000-7f16fb4c3000 rw-p 00136000 08:05 920214                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f16fb4c3000-7f16fb4d4000 r-xp 00000000 08:05 925673                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f16fb4d4000-7f16fb6d3000 ---p 00011000 08:05 925673                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f16fb6d3000-7f16fb6d4000 r--p 00010000 08:05 925673                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f16fb6d4000-7f16fb6d5000 rw-p 00011000 08:05 925673                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f16fb6d5000-7f16fb729000 r-xp 00000000 08:05 2883947                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt_xawt.so
+7f16fb729000-7f16fb929000 ---p 00054000 08:05 2883947                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt_xawt.so
+7f16fb929000-7f16fb92d000 rw-p 00054000 08:05 2883947                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt_xawt.so
+7f16fb92d000-7f16fb92e000 rw-p 00000000 00:00 0 
+7f16fb92e000-7f16fb9d0000 r-xp 00000000 08:05 2883949                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt.so
+7f16fb9d0000-7f16fbbd0000 ---p 000a2000 08:05 2883949                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt.so
+7f16fbbd0000-7f16fbbdc000 rw-p 000a2000 08:05 2883949                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libawt.so
+7f16fbbdc000-7f16fbe00000 rw-p 00000000 00:00 0 
+7f16fbe00000-7f16fc000000 rw-p 00000000 00:00 0 
+7f16fc000000-7f16fc021000 rw-p 00000000 00:00 0 
+7f16fc021000-7f1700000000 ---p 00000000 00:00 0 
+7f1700001000-7f1700002000 ---p 00000000 00:00 0 
+7f1700002000-7f1700082000 rw-p 00000000 00:00 0 
+7f1700082000-7f1700089000 r--s 00000000 08:05 1183113                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f1700089000-7f170009c000 r--s 00344000 08:05 2883642                    /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar
+7f170009c000-7f170009d000 rwxp 00000000 00:00 0 
+7f170009d000-7f17000a1000 r--s 00097000 08:05 2883868                    /usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar
+7f17000a1000-7f17000bd000 r--s 00393000 08:05 2883688                    /usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar
+7f17000bd000-7f17000c7000 r--s 00116000 08:05 2883678                    /usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar
+7f17000c7000-7f17000e8000 r--s 0015a000 08:05 2967927                    /root/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar
+7f17000e8000-7f170010d000 r--s 00534000 08:05 2967960                    /root/.m2/repository/quil/jogl-all-fat/2.3.2/jogl-all-fat-2.3.2.jar
+7f170010d000-7f170010e000 r--s 00005000 08:05 668169                     /root/.m2/repository/clj-native/clj-native/0.9.3/clj-native-0.9.3.jar
+7f170010e000-7f170010f000 r--s 00001000 08:05 668161                     /root/.m2/repository/org/clojure/data.json/0.2.3/data.json-0.2.3.jar
+7f170010f000-7f1700110000 r--s 00001000 08:05 2967754                    /root/.m2/repository/overtone/midi-clj/0.5.0/midi-clj-0.5.0.jar
+7f1700110000-7f170011c000 r--s 0010b000 08:05 2967919                    /root/.m2/repository/org/mozilla/rhino/1.7R5/rhino-1.7R5.jar
+7f170011c000-7f170011d000 r--s 00000000 08:05 2967759                    /root/.m2/repository/clj-glob/clj-glob/1.0.0/clj-glob-1.0.0.jar
+7f170011d000-7f170011e000 r--s 00006000 08:05 2967943                    /root/.m2/repository/org/apache/xmlgraphics/batik-xml/1.8/batik-xml-1.8.jar
+7f170011e000-7f1700185000 r--s 005cb000 08:05 2834307                    /root/.m2/repository/com/google/javascript/closure-compiler/v20151015/closure-compiler-v20151015.jar
+7f1700185000-7f1700186000 r--s 00001000 08:05 2967954                    /root/.m2/repository/quil/processing-pdf/3.2.2/processing-pdf-3.2.2.jar
+7f1700186000-7f170018b000 r--s 00010000 08:05 2967948                    /root/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar
+7f170018b000-7f170018d000 r--s 000a2000 08:05 668193                     /root/.m2/repository/org/clojure/clojurescript/1.7.170/clojurescript-1.7.170.jar
+7f170018d000-7f170018e000 r--s 00000000 08:05 2967957                    /root/.m2/repository/quil/processing-svg/3.2.2/processing-svg-3.2.2.jar
+7f170018e000-7f1700192000 r--s 0002f000 08:05 2320577                    /root/.m2/repository/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar
+7f1700192000-7f1700193000 r--s 00002000 08:05 2967944                    /root/.m2/repository/org/apache/xmlgraphics/batik-ext/1.8/batik-ext-1.8.jar
+7f1700193000-7f1700198000 r--s 0003d000 08:05 2320579                    /root/.m2/repository/commons-net/commons-net/3.0.1/commons-net-3.0.1.jar
+7f1700198000-7f170019f000 r--s 0005b000 08:05 2967962                    /root/.m2/repository/quil/gluegen-rt-fat/2.3.2/gluegen-rt-fat-2.3.2.jar
+7f170019f000-7f17001a3000 r--s 00b46000 08:05 2967756                    /root/.m2/repository/overtone/scsynth/3.5.7.0/scsynth-3.5.7.0.jar
+7f17001a3000-7f17001a4000 r--s 00003000 08:05 2402256                    /root/.m2/repository/leipzig/leipzig/0.10.0/leipzig-0.10.0.jar
+7f17001a4000-7f17001a5000 r--s 0003a000 08:05 2967964                    /root/.m2/repository/quil/processing-js/1.6.3.0/processing-js-1.6.3.0.jar
+7f17001a5000-7f17001a6000 r--s 00000000 08:05 2967958                    /root/.m2/repository/quil/processing-dxf/3.2.2/processing-dxf-3.2.2.jar
+7f17001a6000-7f17001ad000 r--s 00043000 08:05 2967934                    /root/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.8/batik-awt-util-1.8.jar
+7f17001ad000-7f17001dd000 r--s 004e9000 08:05 668194                     /root/.m2/repository/org/clojure/google-closure-library/0.0-20151016-61277aea/google-closure-library-0.0-20151016-61277aea.jar
+7f17001dd000-7f17001e1000 r--s 0001f000 08:05 2967939                    /root/.m2/repository/org/apache/xmlgraphics/batik-dom/1.8/batik-dom-1.8.jar
+7f17001e1000-7f17001e2000 r--s 00001000 08:05 2967753                    /root/.m2/repository/overtone/libs.handlers/0.2.0/libs.handlers-0.2.0.jar
+7f17001e2000-7f17001e4000 r--s 00012000 08:05 1403103                    /root/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20151016-61277aea/google-closure-library-third-party-0.0-20151016-61277aea.jar
+7f17001e4000-7f17001e8000 r--s 0002b000 08:05 2967922                    /root/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar
+7f17001e8000-7f17001e9000 r--s 00005000 08:05 2967925                    /root/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar
+7f17001e9000-7f17001eb000 r--s 00000000 08:05 1403105                    /root/.m2/repository/org/clojure/math.numeric-tower/0.0.4/math.numeric-tower-0.0.4.jar
+7f17001eb000-7f17001ec000 r--s 00004000 08:05 1737582                    /root/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar
+7f17001ec000-7f170020d000 r--s 0015a000 08:05 2967923                    /root/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar
+7f170020d000-7f1700214000 r--s 0006e000 08:05 668167                     /root/.m2/repository/overtone/overtone/0.10.1/overtone-0.10.1.jar
+7f1700214000-7f1700216000 r--s 00000000 08:05 2967751                    /root/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar
+7f1700216000-7f1700234000 r--s 0027d000 08:05 2967949                    /root/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar
+7f1700234000-7f170023c000 r--s 00028000 08:05 2967938                    /root/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar
+7f170023c000-7f1700240000 r--s 0002b000 08:05 2967929                    /root/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar
+7f1700240000-7f1700247000 r--s 00038000 08:05 2967940                    /root/.m2/repository/org/apache/xmlgraphics/batik-css/1.8/batik-css-1.8.jar
+7f1700247000-7f170028a000 r--s 00332000 08:05 668162                     /root/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar
+7f170028a000-7f170028b000 ---p 00000000 00:00 0 
+7f170028b000-7f170038b000 rw-p 00000000 00:00 0 
+7f170038b000-7f170038e000 ---p 00000000 00:00 0 
+7f170038e000-7f170048c000 rw-p 00000000 00:00 0 
+7f170048c000-7f170048f000 ---p 00000000 00:00 0 
+7f170048f000-7f170058d000 rw-p 00000000 00:00 0 
+7f170058d000-7f1700590000 ---p 00000000 00:00 0 
+7f1700590000-7f170068e000 rw-p 00000000 00:00 0 
+7f170068e000-7f1700691000 ---p 00000000 00:00 0 
+7f1700691000-7f170078f000 rw-p 00000000 00:00 0 
+7f170078f000-7f1700792000 ---p 00000000 00:00 0 
+7f1700792000-7f1700890000 rw-p 00000000 00:00 0 
+7f1700890000-7f1700893000 ---p 00000000 00:00 0 
+7f1700893000-7f1700991000 rw-p 00000000 00:00 0 
+7f1700991000-7f1700de7000 r--p 00000000 08:05 926308                     /usr/lib/locale/locale-archive
+7f1700de7000-7f1700dea000 ---p 00000000 00:00 0 
+7f1700dea000-7f1700ee8000 rw-p 00000000 00:00 0 
+7f1700ee8000-7f1700eeb000 ---p 00000000 00:00 0 
+7f1700eeb000-7f1700fe9000 rw-p 00000000 00:00 0 
+7f1700fe9000-7f1700fea000 ---p 00000000 00:00 0 
+7f1700fea000-7f1702cec000 rw-p 00000000 00:00 0 
+7f1702cec000-7f1702ec5000 r--s 03d1f000 08:05 2883876                    /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+7f1702ec5000-7f1703f03000 rw-p 00000000 00:00 0 
+7f1703f03000-7f1703f04000 ---p 00000000 00:00 0 
+7f1703f04000-7f1704004000 rw-p 00000000 00:00 0 
+7f1704004000-7f1704005000 ---p 00000000 00:00 0 
+7f1704005000-7f1704105000 rw-p 00000000 00:00 0 
+7f1704105000-7f1704106000 ---p 00000000 00:00 0 
+7f1704106000-7f1704206000 rw-p 00000000 00:00 0 
+7f1704206000-7f1704207000 ---p 00000000 00:00 0 
+7f1704207000-7f170435c000 rw-p 00000000 00:00 0 
+7f170435c000-7f1704837000 ---p 00000000 00:00 0 
+7f1704837000-7f170488c000 rw-p 00000000 00:00 0 
+7f170488c000-7f1704d67000 ---p 00000000 00:00 0 
+7f1704d67000-7f1704e86000 rw-p 00000000 00:00 0 
+7f1704e86000-7f1704fff000 ---p 00000000 00:00 0 
+7f1704fff000-7f1705000000 rw-p 00000000 00:00 0 
+7f1705000000-7f1705750000 rwxp 00000000 00:00 0 
+7f1705750000-7f1714000000 ---p 00000000 00:00 0 
+7f1714000000-7f171520c000 rw-p 00000000 00:00 0 
+7f171520c000-7f1718000000 ---p 00000000 00:00 0 
+7f1718000000-7f1718001000 r--s 00002000 08:05 2967760                    /root/.m2/repository/clojure-complete/clojure-complete/0.2.4/clojure-complete-0.2.4.jar
+7f1718001000-7f1718002000 r--s 00009000 08:05 1607330                    /root/.m2/repository/org/clojure/tools.nrepl/0.2.12/tools.nrepl-0.2.12.jar
+7f1718002000-7f171809f000 rw-p 00000000 00:00 0 
+7f171809f000-7f17180a0000 ---p 00000000 00:00 0 
+7f17180a0000-7f17181a0000 rw-p 00000000 00:00 0 
+7f17181a0000-7f17181a1000 ---p 00000000 00:00 0 
+7f17181a1000-7f17182a1000 rw-p 00000000 00:00 0 
+7f17182a1000-7f17182a2000 ---p 00000000 00:00 0 
+7f17182a2000-7f17183a2000 rw-p 00000000 00:00 0 
+7f17183a2000-7f17183a3000 ---p 00000000 00:00 0 
+7f17183a3000-7f17184c1000 rw-p 00000000 00:00 0 
+7f17184c1000-7f1718863000 ---p 00000000 00:00 0 
+7f1718863000-7f171887d000 r-xp 00000000 08:05 2883910                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libzip.so
+7f171887d000-7f1718a7d000 ---p 0001a000 08:05 2883910                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libzip.so
+7f1718a7d000-7f1718a7e000 rw-p 0001a000 08:05 2883910                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libzip.so
+7f1718a7e000-7f1718a89000 r-xp 00000000 08:05 4326506                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f1718a89000-7f1718c88000 ---p 0000b000 08:05 4326506                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f1718c88000-7f1718c89000 r--p 0000a000 08:05 4326506                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f1718c89000-7f1718c8a000 rw-p 0000b000 08:05 4326506                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f1718c8a000-7f1718c90000 rw-p 00000000 00:00 0 
+7f1718c90000-7f1718c9b000 r-xp 00000000 08:05 4326478                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f1718c9b000-7f1718e9a000 ---p 0000b000 08:05 4326478                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f1718e9a000-7f1718e9b000 r--p 0000a000 08:05 4326478                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f1718e9b000-7f1718e9c000 rw-p 0000b000 08:05 4326478                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f1718e9c000-7f1718eb2000 r-xp 00000000 08:05 4326501                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f1718eb2000-7f17190b1000 ---p 00016000 08:05 4326501                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f17190b1000-7f17190b2000 r--p 00015000 08:05 4326501                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f17190b2000-7f17190b3000 rw-p 00016000 08:05 4326501                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f17190b3000-7f17190b5000 rw-p 00000000 00:00 0 
+7f17190b5000-7f17190bd000 r-xp 00000000 08:05 4326503                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f17190bd000-7f17192bc000 ---p 00008000 08:05 4326503                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f17192bc000-7f17192bd000 r--p 00007000 08:05 4326503                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f17192bd000-7f17192be000 rw-p 00008000 08:05 4326503                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f17192be000-7f17192e8000 r-xp 00000000 08:05 2883919                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjava.so
+7f17192e8000-7f17194e8000 ---p 0002a000 08:05 2883919                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjava.so
+7f17194e8000-7f17194ea000 rw-p 0002a000 08:05 2883919                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libjava.so
+7f17194ea000-7f17194f7000 r-xp 00000000 08:05 2883922                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libverify.so
+7f17194f7000-7f17196f7000 ---p 0000d000 08:05 2883922                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libverify.so
+7f17196f7000-7f17196f9000 rw-p 0000d000 08:05 2883922                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/libverify.so
+7f17196f9000-7f1719700000 r-xp 00000000 08:05 4325712                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f1719700000-7f17198ff000 ---p 00007000 08:05 4325712                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f17198ff000-7f1719900000 r--p 00006000 08:05 4325712                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f1719900000-7f1719901000 rw-p 00007000 08:05 4325712                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f1719901000-7f1719a09000 r-xp 00000000 08:05 4326497                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f1719a09000-7f1719c08000 ---p 00108000 08:05 4326497                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f1719c08000-7f1719c09000 r--p 00107000 08:05 4326497                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f1719c09000-7f1719c0a000 rw-p 00108000 08:05 4326497                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f1719c0a000-7f171a8ca000 r-xp 00000000 08:05 2883900                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/server/libjvm.so
+7f171a8ca000-7f171aaca000 ---p 00cc0000 08:05 2883900                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/server/libjvm.so
+7f171aaca000-7f171aba2000 rw-p 00cc0000 08:05 2883900                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/server/libjvm.so
+7f171aba2000-7f171abed000 rw-p 00000000 00:00 0 
+7f171abed000-7f171adac000 r-xp 00000000 08:05 4326486                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f171adac000-7f171afac000 ---p 001bf000 08:05 4326486                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f171afac000-7f171afb0000 r--p 001bf000 08:05 4326486                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f171afb0000-7f171afb2000 rw-p 001c3000 08:05 4326486                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f171afb2000-7f171afb6000 rw-p 00000000 00:00 0 
+7f171afb6000-7f171afb9000 r-xp 00000000 08:05 4326484                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f171afb9000-7f171b1b8000 ---p 00003000 08:05 4326484                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f171b1b8000-7f171b1b9000 r--p 00002000 08:05 4326484                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f171b1b9000-7f171b1ba000 rw-p 00003000 08:05 4326484                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f171b1ba000-7f171b1cf000 r-xp 00000000 08:05 2883892                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/jli/libjli.so
+7f171b1cf000-7f171b3cf000 ---p 00015000 08:05 2883892                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/jli/libjli.so
+7f171b3cf000-7f171b3d0000 rw-p 00015000 08:05 2883892                    /usr/lib/jvm/java-8-oracle/jre/lib/amd64/jli/libjli.so
+7f171b3d0000-7f171b3e8000 r-xp 00000000 08:05 4326499                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f171b3e8000-7f171b5e7000 ---p 00018000 08:05 4326499                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f171b5e7000-7f171b5e8000 r--p 00017000 08:05 4326499                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f171b5e8000-7f171b5e9000 rw-p 00018000 08:05 4326499                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f171b5e9000-7f171b5ed000 rw-p 00000000 00:00 0 
+7f171b5ed000-7f171b613000 r-xp 00000000 08:05 4325700                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f171b613000-7f171b615000 r--s 00003000 08:05 1485227                    /root/.m2/repository/org/clojure/tools.namespace/0.2.3/tools.namespace-0.2.3.jar
+7f171b615000-7f171b619000 r--s 000f3000 08:05 668163                     /root/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
+7f171b619000-7f171b61d000 r--s 0003a000 08:05 2967953                    /root/.m2/repository/quil/quil/2.5.0/quil-2.5.0.jar
+7f171b61d000-7f171b6e2000 rw-p 00000000 00:00 0 
+7f171b6e2000-7f171b6e5000 ---p 00000000 00:00 0 
+7f171b6e5000-7f171b7e7000 rw-p 00000000 00:00 0 
+7f171b7e7000-7f171b7e8000 r--s 00001000 08:05 668168                     /root/.m2/repository/overtone/at-at/1.2.0/at-at-1.2.0.jar
+7f171b7e8000-7f171b7ec000 r--s 00b6f000 08:05 2967758                    /root/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar
+7f171b7ec000-7f171b7f8000 r--s 00108000 08:05 2967921                    /root/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar
+7f171b7f8000-7f171b7fd000 r--s 00027000 08:05 2967931                    /root/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.8/batik-svggen-1.8.jar
+7f171b7fd000-7f171b802000 r--s 000f0000 08:05 2967955                    /root/.m2/repository/quil/processing-core/3.2.2/processing-core-3.2.2.jar
+7f171b802000-7f171b803000 r--s 0000a000 08:05 1403107                    /root/.m2/repository/org/clojure/tools.reader/0.10.0-alpha3/tools.reader-0.10.0-alpha3.jar
+7f171b803000-7f171b806000 r--s 00018000 08:05 2967933                    /root/.m2/repository/org/apache/xmlgraphics/batik-util/1.8/batik-util-1.8.jar
+7f171b806000-7f171b80e000 rw-s 00000000 08:05 666580                     /tmp/hsperfdata_root/2991
+7f171b80e000-7f171b80f000 rw-p 00000000 00:00 0 
+7f171b80f000-7f171b810000 r--p 00000000 00:00 0 
+7f171b810000-7f171b812000 rw-p 00000000 00:00 0 
+7f171b812000-7f171b813000 r--p 00025000 08:05 4325700                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f171b813000-7f171b814000 rw-p 00026000 08:05 4325700                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f171b814000-7f171b815000 rw-p 00000000 00:00 0 
+7fff7f49b000-7fff7f4bd000 rw-p 00000000 00:00 0                          [stack]
+7fff7f51d000-7fff7f51f000 r--p 00000000 00:00 0                          [vvar]
+7fff7f51f000-7fff7f521000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:-OmitStackTraceInFastThrow -Dclojure.compile.path=/home/andrei-octavian/Hack/ICHack/tutorial/target/classes -Dtutorial.version=1.0 -Dclojure.debug=false -Djava.library.path=/home/andrei-octavian/Hack/ICHack/tutorial/target/native/linux/x86_64 
+java_command: clojure.main -i /tmp/form-init7873909766785195456.clj
+java_class_path (initial): /home/andrei-octavian/Hack/ICHack/tutorial/test:/home/andrei-octavian/Hack/ICHack/tutorial/src:/home/andrei-octavian/Hack/ICHack/tutorial/dev-resources:/home/andrei-octavian/Hack/ICHack/tutorial/resources:/home/andrei-octavian/Hack/ICHack/tutorial/target/classes:/root/.m2/repository/org/apache/xmlgraphics/batik-util/1.8/batik-util-1.8.jar:/root/.m2/repository/org/clojure/tools.reader/0.10.0-alpha3/tools.reader-0.10.0-alpha3.jar:/root/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar:/root/.m2/repository/quil/processing-core/3.2.2/processing-core-3.2.2.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.8/batik-svggen-1.8.jar:/root/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar:/root/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar:/root/.m2/repository/quil/quil/2.5.0/quil-2.5.0.jar:/root/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-css/1.8/batik-css-1.8.jar:/root/.m2/repository/org/clojure/tools.namespace/0.2.3/tools.namespace-0.2.3.jar:/root/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar:/root/.m2/repository/overtone/at-at/1.2.0/at-at-1.2.0.jar:/root/.m2/repository/org/clojure/tools.nrepl/0.2.12/tools.nrepl-0.2.12.jar:/root/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/root/.m2/repository/clojure-complete/clojure-complete/0.2.4/clojure-complete-0.2.4.jar:/root/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/root/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar:/root/.m2/repository/overtone/overtone/0.10.1/overtone-0.10.1.jar:/root/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar:/root/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar:/root/.m2/repository/org/clojure/math.numeric-tower/0.0.4/math.numeric-tower-0.0.4.jar:/root/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar:/root/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=/home/andrei-octavian/.lein/self-installs/leiningen-2.7.1-standalone.jar
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+USERNAME=root
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xabca10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xabca10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x91b050], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
+
+uname:Linux 4.4.0-57-generic #78-Ubuntu SMP Fri Dec 9 23:50:32 UTC 2016 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 63541, NOFILE 65536, AS infinity
+load average:0,42 0,15 0,05
+
+/proc/meminfo:
+MemTotal:       16312652 kB
+MemFree:        13751988 kB
+MemAvailable:   14419944 kB
+Buffers:          106880 kB
+Cached:           803692 kB
+SwapCached:            0 kB
+Active:          1731568 kB
+Inactive:         527376 kB
+Active(anon):    1349692 kB
+Inactive(anon):    34004 kB
+Active(file):     381876 kB
+Inactive(file):   493372 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:      16656380 kB
+SwapFree:       16656380 kB
+Dirty:               192 kB
+Writeback:             0 kB
+AnonPages:       1340272 kB
+Mapped:           349972 kB
+Shmem:             35324 kB
+Slab:             136168 kB
+SReclaimable:      90964 kB
+SUnreclaim:        45204 kB
+KernelStack:        9872 kB
+PageTables:        35560 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    24812704 kB
+Committed_AS:    5485988 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    641024 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      179532 kB
+DirectMap2M:     2846720 kB
+DirectMap1G:    13631488 kB
+
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1915.917
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1598.535
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1599.023
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1745.214
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1600.097
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1612.304
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 2000.585
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x19
+cpu MHz		: 1502.636
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4988.55
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16312652k(13751988k free), swap 16656380k(16656380k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.91-b14) for linux-amd64 JRE (1.8.0_91-b14), built on Apr  1 2016 00:57:21 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Sun Feb  5 11:31:13 2017
+elapsed time: 11 seconds (0d 0h 0m 11s)
+

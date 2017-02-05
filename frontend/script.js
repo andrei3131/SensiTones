@@ -2,14 +2,14 @@ var chatApp = angular.module('chatApp', []);
 
 chatApp.controller('mainController', function($scope, $timeout) {
     $scope.messages = [{user: "", time: "2017-02-04T19:10:21.932Z", message: "Hi, how are you?"},
-    {user: "Alex", time: "2017-02-04T19:12:21.932Z", message: "Good, you?"}
+    {user: "Sigmund", time: "1856-05-06T19:12:21.932Z", message: "Good, you?"}
     ];
 
     $scope.messages2 = [];
 
 
-    $scope.users = [{name: "Alex", dob: "1995-02-04T19:10:21.93", location: "London, UK", messages: $scope.messages},
-    {name: "Jane", dob: "1994-05-07T19:10:21.93", location: "Manchester, UK", messages: $scope.messages2}];
+    $scope.users = [{name: "Sigmund", dob: "1995-02-04T19:10:21.93", location: "Vienna, Au", messages: $scope.messages},
+    {name: "Tay", dob: "1990-07-12T19:10:21.93", location: "Manchester, UK", messages: $scope.messages2}];
 
     $scope.currentChatUser = $scope.users[0];
 
@@ -24,7 +24,7 @@ chatApp.controller('mainController', function($scope, $timeout) {
             $scope.currentChatUser.messages.push($scope.newPost);
             $scope.myMessage = "";
             
-$.post("http://127.0.0.1:4024 ", $scope.newPost);
+$.post("http://127.0.0.1:3602 ", $scope.newPost);
         }
 
         $timeout($scope.updateScroll, 100);
@@ -35,7 +35,7 @@ $.post("http://127.0.0.1:4024 ", $scope.newPost);
         $scope.currentChatUser.messages.push({user: "Alex", time: $scope.date, message: "Why ? What happened ?"});
     }
     
-    $timeout($scope.resp, 6000);
+    $timeout($scope.resp, 60000);
 
     $scope.updateScroll = function() {
         var element = document.getElementById("scrollable");
@@ -56,9 +56,33 @@ $.post("http://127.0.0.1:4024 ", $scope.newPost);
 
     $scope.changeSong = function(song) {
         song = "3iu21h98dh19f".concat(song).concat(".txt");
-$.post("http://127.0.0.1:4024 ", song);
+$.post("http://127.0.0.1:3602 ", song);
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
