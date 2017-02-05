@@ -1,9 +1,9 @@
 var chatApp = angular.module('chatApp', []);
 
 chatApp.controller('mainController', function($scope, $timeout) {
-    $scope.messages = [{time: "2017-02-04T19:10:21.932Z", message: "Hi, how are you?"},
-    {time: "2017-02-04T19:12:21.932Z", message: "Good, you?"},
-    {time: "2017-02-04T19:14:21.932Z", message: "Good"}];
+    $scope.messages = [{user: "", time: "2017-02-04T19:10:21.932Z", message: "Hi, how are you?"},
+    {user: "Alex", time: "2017-02-04T19:12:21.932Z", message: "Good, you?"}
+    ];
 
     $scope.messages2 = [];
 
@@ -16,19 +16,26 @@ chatApp.controller('mainController', function($scope, $timeout) {
     $scope.post_mess = function() {
 
         if($scope.myMessage != "") {
-            $scope.newPost = {};
-            $scope.newPost.time = new Date();
+            $scope.newPost = $scope.elemToAdd = {};
+            $scope.newPost.time = $scope.elemToAdd.time = new Date();
             $scope.newPost.message = $scope.myMessage;
-
-            console.log($scope.newPost);
-
+            $scope.elemToAdd.user = "";
+            $scope.elemToAdd.message = $scope.myMessage;
             $scope.currentChatUser.messages.push($scope.newPost);
             $scope.myMessage = "";
+            
             $.post("http://127.0.0.1:3600", $scope.newPost);
         }
 
         $timeout($scope.updateScroll, 100);
     }
+    
+    $scope.resp = function() {
+        $scope.date = new Date();
+        $scope.currentChatUser.messages.push({user: "Alex", time: $scope.date, message: "Why ? What happened ?"});
+    }
+    
+    $timeout($scope.resp, 6000);
 
     $scope.updateScroll = function() {
         var element = document.getElementById("scrollable");
@@ -38,5 +45,16 @@ chatApp.controller('mainController', function($scope, $timeout) {
     $scope.changeChat = function(user) {
         $scope.currentChatUser = user;
     }
-
+    
+    $scope.getMessCol = function(item) {
+        if(item.user != "") {
+            return "green";
+        }
+    }
+    
+    $scope.songs = ["mysong1", "mysong2", "mysong3", "mysong4"];
+    
+    $scope.changeSong = function(song) {
+        $.get("http://127.0.0.1:3600", {title: song});
+    }
 });

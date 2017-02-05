@@ -79,8 +79,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-col m7" id="message-history">
       
       <div style="overflow-y: scroll; height: 70vh" id="scrollable">
-        <div class="w3-container w3-card-2 w3-white w3-round w3-margin" ng-repeat="item in currentChatUser.messages | orderBy: -time"><br>
-            <span class="w3-right w3-opacity">{{item.time | date: 'medium' }}</span>
+        <div class="w3-container w3-card-2 w3-round w3-margin" ng-repeat="item in currentChatUser.messages | orderBy: -time" ng-style="{'color': getMessCol(item)}"><br>
+            <span class="w3-right w3-opacity">{{item.time | date: 'medium'}}</span>
             <hr class="w3-clear">
             <p>{{item.message}}</p>
         </div>
@@ -115,6 +115,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> {{currentChatUser.location}} </p>
          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{currentChatUser.dob | date: 'longDate'}}</p>
         </div>
+      </div>
+      
+      <br><br>
+      
+      <div class="w3-card-2 w3-round w3-white w3-hide-small">
+        <div class="w3-container" ng-repeat="song in songs" ng-click="changeSong(song)">
+          <p>{{song}}</p>
+        </div>
+        <hr>
       </div>
       
     <!-- End Right Column -->
