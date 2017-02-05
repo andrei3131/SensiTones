@@ -34,7 +34,6 @@ for line in content.split('\n'):
 	else:
 		output += line
 	output += '\n'
-print output
 
 fo = open(my_file, "wb")
 fo.write(output)
@@ -65,7 +64,12 @@ while True:
     	if arrived:
     		message += line
 
-    engine.process_message(message)
+    if "POST" in lines[0]:
+    	print "POST issued"
+    	engine.process_message(message)
+    else:
+    	print "GET issued"
+    	engine.process_files(message)
 
     csock.sendall("""HTTP/1.0 200 OK
 		Content-Type: text/html
