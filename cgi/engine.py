@@ -14,6 +14,7 @@ class Engine:
 		self.message_vector = ""
 		self.max_tot_length = 40
 		self.path = "../tutorial/"
+		self.file_path = "../resources/"
 	def process_message(self, mess):
 		self.message_vector += process_message(mess)
 		if len(self.message_vector) > self.max_tot_length:
@@ -26,3 +27,17 @@ class Engine:
 			fo.close()
 
 			self.message_vector = ""
+	def process_files(self, filename):
+		path = self.path	
+
+		content = ""
+		with open(path + filename, 'r') as content_file:
+			content = content_file.read()
+			content_file.close()
+		
+		my_file = path + "notes.txt"
+
+		fo = open(my_file, "wb")
+		fo.write(output)
+		fo.close()
+
