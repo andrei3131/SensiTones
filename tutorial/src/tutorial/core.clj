@@ -247,8 +247,26 @@
               durations
               [1/2 1/2 1/2 1/2 1/3 1/3 1/2 1/2 1/2 1/3 1/3 1/3 1/4 1/4 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 1/3 1/3 1/4 1/4 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 ]
               times (reductions + 0 durations)]
-            (map note times pitches)))
+            (map note times
 
+              pitches
+
+
+              )))
+
+              (comment
+
+                (->> smoke-on-the-water
+                  (where :time (bpm 90))
+                  (where :pitch (comp C sharp pentatonic))
+                  play)
+
+              )
+
+            (even-melody
+              (map
+                (comp C sharp major)
+                (concat (range 0 8) (reverse (range 0 7)))))
 
 
 (comment
@@ -256,15 +274,6 @@
 )
 
 (defn bpm [beats] (fn [beat] (/ (* beat 60 1000) beats)))
-
-(defn -main "Main" []
-
-  (->> smoke-on-the-water
-    (where :time (bpm 90))
-    (where :pitch (comp C major))
-    play)
-
-)
 
 (defn run [[from & tos]]
   (if-let [to (first tos)]

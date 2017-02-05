@@ -6,7 +6,7 @@ class Engine:
 		self.max_tot_length = 40
 		self.path = "../tutorial/"
 	def process_message(self, mess):
-		self.message_vector += mess		
+		self.message_vector += mess
 		if len(self.message_vector) > self.max_tot_length:
 			sen = post_request(self.message_vector)
 

@@ -1,1 +1,1 @@
-bash ./script.sh | sudo lein repl 
+bash script.sh | sudo lein repl 
