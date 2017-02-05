@@ -1,0 +1,133 @@
+[Intro]
+
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+<span>A#5</span> <span>C5</span> <span class="">F5</span> <span>G5</span>
+<span>A#5</span> <span>C5</span> <span class="">F5</span> <span class="">G5</span>
+<span>A#5</span> <span>C5</span> <span>F5</span> <span class="">G5</span> <span class="">A#5</span> 
+
+
+[Verse 1]
+
+<span>A</span>                <span>E</span>
+     there was a time
+<span>F#m</span>                <span>C#m</span>
+     when I was so broken-hearted
+<span>D</span>                <span>A</span>         <span>E</span>
+     love wasn't much of a friend of mine
+<span>A</span>                    <span>E</span>
+     the tables have turned, yeah
+<span>F#m</span>                     <span>C#m</span>
+     'cause me and them ways have parted
+<span>D</span>                 <span>A</span>            <span>E</span>
+     that kind of love was the killin' kind -- listen
+<span>G</span>          <span class="">D</span>           <span>G</span>             <span>D</span>
+     all I want is someone I can't resist
+<span>C</span>                <span>G</span>                    <span>E</span>
+     I know all I need to know by the way that I got kissed
+
+
+[Chorus]
+
+      <span>A</span>             <span>E</span>
+I was Cryin' when I met you
+        <span>F#m</span>          <span>D</span>           <span>A</span>
+now I'm tryin' to forget you
+               <span>E</span>          <span>D</span>
+[your] love is sweet misery
+      <span>A</span>              <span>E</span>
+I was Cryin' just to get you
+        <span>C#m</span>            <span>D</span>         <span>A</span>
+now I'm dyin' 'cause I let you
+            <span>E</span>           <span>D</span>
+do what you do, down on me
+
+
+[w/Intro]
+
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+now there's not even breathin' room
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+between pleasure and pain
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+yeah, you cry when we're makin' love
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+must be one and the same
+
+
+[Verse 2]
+
+<span>A</span>                <span>E</span>
+it's down on me
+<span>F#m</span>                <span>C#m</span>
+yeah I got to tell you one thing
+<span>D</span>                <span>A</span>         <span>E</span>
+it's been on my mind, girl I gotta say
+<span>A</span>                    <span>E</span>
+we're partners in crime
+<span>F#m</span>                <span>C#m</span>
+you got that certain something
+<span>D</span>                <span>A</span>         <span>E</span>
+what you give to me takes my breath away
+        <span>G</span>               <span>D</span>             <span>G</span>               <span>D</span>
+now the word out on the street is the devil's in your kiss
+<span>C</span>                <span>G</span>                   <span>E</span>
+if our love goes up in flames it's a fire I can't resist
+
+
+[Chorus]
+
+      <span>A</span>             <span>E</span>
+I was Cryin' when I met you
+        <span>F#m</span>          <span>D</span>           <span>A</span>
+now I'm tryin' to forget you
+               <span>E</span>          <span>D</span>
+[your] love is sweet misery
+      <span>A</span>              <span>E</span>
+I was Cryin' just to get you
+        <span>C#m</span>            <span>D</span>         <span>A</span>
+now I'm dyin' 'cause I let you
+            <span>E</span>           <span>D</span>
+do what you do, down on me
+
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span>
+<span>A#5</span> <span>C5</span> <span>F5</span> <span>G5</span> <span>A#5</span> 
+
+Bridge
+       <span>D#</span>             <span>A#</span>
+'cause what you got inside
+      <span>D#</span>                     <span>A#</span>
+ain't where your love should stay
+    <span>G#</span>                    <span>D#</span>
+yeah, our love, sweet love, ain't love
+        <span>E</span>
+till ya give your heart away
+
+
+[Alt. Chorus]
+
+      <span>A</span>             <span>E</span>
+I was Cryin' when I met you
+        <span>C#m</span>          <span>D</span>           <span>A</span>
+now I'm tryin' to forget you
+             <span>E</span>          <span>D</span>
+your love is sweet misery
+      <span>A</span>              <span>E</span>
+I was Cryin' just to get you
+        F#m(tacet)    D         A
+now I'm dy_____in' to let you
+            <span>E</span>          <span>D</span>
+do what you do down to me, baby, baby,
+
+
+[Solo]
+
+<span>A</span>  <span>E</span>  <span>C#m</span>  <span>D</span>  <span>A</span>  <span>E</span>  <span>D</span>
+<span>A</span>  <span>E</span>  <span>F#m</span>  <span>D</span>  <span>A</span>  <span>E</span>  <span>D</span>
+
+
+[Vary Chorus to fade]
+
+
+    <span>A</span>   <span>A#</span>   <span>A#5</span>   <span>C</span>   <span>C5</span>   <span>C#m</span>   <span>D</span>   <span>D#</span>    <span>E</span>   <span>F5</span>   <span>F#m</span>   <span>G</span>   <span>G5</span>   <span>G#</span>
