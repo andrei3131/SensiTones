@@ -1,153 +1,414 @@
-(ns tutorial.core)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Functional Composition by Chris Ford (@ctford)            ;;
+;; ThoughtWorks                                              ;;
+;;                                                           ;;
+;; http://github.com/ctford/functional-composition           ;;
+;; http://github.com/ctford/leipzig                          ;;
+;; http://github.com/overtone/overtone                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use 'overtone.live)
+(ns tutorial.core
+  (:use [overtone.live :exclude
+          [scale pitch midi->hz note sharp flat run fill]]
+        [quil.core :only
+          [smooth sketch ellipse frame-rate background
+           width height stroke stroke-weight fill]]))
 
-(definst sin-wave [freq 440 attack 0.01 sustain 0.4 release 0.1 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (sin-osc freq)
-        vol))
-(comment
-   (sin-wave)
-)
 
-(definst saw-wave [freq 440 attack 0.01 sustain 0.4 release 0.1 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (saw freq)
-        vol))
-(comment
-   (saw-wave)
-)
 
-(definst square-wave [freq 440 attack 0.01 sustain 0.4 release 0.1 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (lf-pulse:ar freq)
-        vol))
-(comment
-   (square-wave)
-)
 
-(definst noisey [freq 440 attack 0.01 sustain 0.4 release 0.1 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (pink-noise) ; also have (white-noise) and others...
-        vol))
-(comment
-   (noisey)
-)
 
-(definst triangle-wave [freq 440 attack 0.01 sustain 0.1 release 0.4 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (lf-tri freq)
-       vol))
-(comment
-   (triangle-wave)
-)
 
-(definst spooky-house [freq 440 width 0.2 attack 0.3 sustain 4 release 0.3 vol 0.4] 
-    (* (env-gen (lin attack sustain release) 1 1 0 1 FREE)
-       (sin-osc (+ freq (* 20 (lf-pulse:kr 0.5 0 width))))
-        vol))
-(comment
-  (spooky-house)  
-)
 
-;;;;;;;;;;;;;;;;
-;; Mouse Moves;;
-;;;;;;;;;;;;;;;;
-(demo 10 (lpf (saw 100) (mouse-x 40 5000 EXP)))
-;; low-pass; move the mouse left and right to change the threshold frequency
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Sine waves                                                ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(demo 10 (hpf (saw 100) (mouse-x 40 5000 EXP)))
-;; high-pass; move the mouse left and right to change the threshold frequency
+(definst tone [frequency 440] (sin-osc frequency))
 
-(demo 30 (bpf (saw 100) (mouse-x 40 5000 EXP) (mouse-y 0.01 1 LIN)))
-;; band-pass; move mouse left/right to change threshold frequency; up/down to change bandwidth (top is narrowest)
-
-;; here we generate a pulse of white noise, and pass it through a pluck filter
-;; with a delay based on the given frequency
-(let [freq 220]
-   (demo (pluck (* (white-noise) (env-gen (perc 0.001 2) :action FREE)) 1 3 (/ 1 freq))))
-
-;;Multi-channel/stereo
-(defsynth sin1 [freq 440]
-    (out 1 (sin-osc freq)))
-(comment
-    (sin1)
-)
-
-;;;;;;;;;;;;;;;;;;;
-;;Musical Sources;;
-;;;;;;;;;;;;;;;;;;;
-
-(def nodoubt (sample "resources/dont_speak-no_doubt.wav"))
-(def nodoubt-buf (load-sample "resources/dont_speak-no_doubt.wav"))
-; (scope :buf nodoubt-buf)
-
-(def sample-buf (load-sample "resources/dont_speak-no_doubt.wav"))
-(defsynth reverb-on-left []
-    (let [dry (play-buf 1 sample-buf)
-          wet (free-verb dry 1)]
-          (out 0 [wet dry])))
+(definst beep [frequency 440 duration 1]
+  (let [envelope (line 1 0 duration :action FREE)]
+          (* envelope (sin-osc frequency))))
 
 (comment
-  (reverb-on-left)
-)
-
-
-;;;;;;;;;;;;;;;
-;;Swing Music;;
-;;;;;;;;;;;;;;;
-; define a metronome at a given tempo, expressed in beats per minute.
-(def metro (metronome 120))
-
-(definst c-hat [amp 0.8 t 0.04]
-    (let [env (env-gen (perc 0.001 t) 1 1 0 1 FREE)
-                  noise (white-noise)
-                          sqr (* (env-gen (perc 0.01 0.04)) (pulse 880 0.2))
-                                  filt (bpf (+ sqr noise) 9000 0.5)]
-          (* amp env filt)))
-
-
-(definst o-hat [amp 0.8 t 0.5]
-    (let [env (env-gen (perc 0.001 t) 1 1 0 1 FREE)
-                  noise (white-noise)
-                          sqr (* (env-gen (perc 0.01 0.04)) (pulse 880 0.2))
-                                  filt (bpf (+ sqr noise) 9000 0.5)]
-          (* amp env filt)))
-
-(defn swinger [beat]
-    (at (metro beat) (o-hat))
-      (at (metro (inc beat)) (c-hat))
-        (at (metro (+ 1.65 beat)) (c-hat))
-          (apply-at (metro (+ 2 beat)) #'swinger (+ 2 beat) []))
-
-(comment
-  (swinger (metro))
-)
-
-(definst quux [freq 440] (* 0.3 (saw freq)))
-(comment
-  (quux)
-)
-(comment
-  (ctl quux :freq 660)
-)
-
-;;;;;;;;
-;;STOP;;
-;;;;;;;;
-(comment
+  (tone 300)
+  (beep 300)
   (stop)
 )
 
-;;;;;;;;;;;;;;;App;;;;;;;;;;;;;;;;;;;
-(defn choosesong [value] (print value))
 
 
-(defn receive [] 
-   (let [value (read-line)]
-       (choosesong (value))))
 
-(defn -main
-      "Sentient Note"
-      []
-      (while true (receive)))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Harmonics                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(definst bell [frequency 440 duration 10
+               h0 1 h1 0.6 h2 0.4 h3 0.25 h4 0.2 h5 0.15]
+  (let [harmonic-series [ 1  2  3  4  5  6]
+                        ;[ 1  2  3  4.2 5.4 6.8]
+        proportions     [h0 h1 h2 h3 h4 h5]
+        component
+         (fn [harmonic proportion]
+           (* 1/2
+              proportion
+              (env-gen (perc 0.01 (* proportion duration)))
+              (sin-osc (* harmonic frequency))))
+        whole
+          (mix (map component harmonic-series proportions))]
+    (detect-silence whole :action FREE)
+    whole))
+
+(comment
+  (bell 300)
+  (beep 300)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Psycho-acoustics                                ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(comment
+  (bell 600 10.0)
+  (bell 500 10.0 0.0)
+  (bell 400 10.0 0.0 0.0)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Equal temperament                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn midi->hz [midi]
+  (*
+    8.1757989156 ; midi zero
+    (java.lang.Math/pow 2 (/ midi 12))))
+
+(comment
+  (midi->hz 69)
+)
+
+(defn ding [midi] (bell (midi->hz midi) 3))
+
+(comment
+  (ding 69)
+)
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Musical events                                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn note [timing pitch] {:time timing :pitch pitch})
+(defn where [k f notes] (->> notes (map #(update-in % [k] f))))
+(defn from [offset] (partial + offset))
+
+(defn play [notes]
+  (let [scheduled-notes (->> notes (where :time (from (now))))]
+    (doseq [{ms :time midi :pitch} scheduled-notes]
+      (at ms (ding midi)))
+    scheduled-notes))
+
+(defn even-melody [pitches]
+  (let [times (reductions + (repeat 1000/3))
+        notes (map note times pitches)]
+    (play notes)))
+
+(comment
+  (even-melody (range 70 81))
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Scale                                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defmacro defs [names values]
+  `(do
+     ~@(map
+         (fn [name value] `(def ~name ~value))
+         names (eval values))))
+
+(defn sum-n [series n] (reduce + (take n series)))
+
+(defn scale [intervals]
+  (fn [degree]
+    (if-not (neg? degree)
+      (sum-n (cycle intervals) degree)
+      ((comp - (scale (reverse intervals)) -) degree))))
+
+(def major (scale [2 2 1 2 2 2 1]))
+
+(def C (from 60))
+(defs [D E F G A B]
+  (map
+    (comp from C major)
+    (rest (range))))
+
+(defs [sharp flat] [inc dec])
+
+; alternative scales
+(def minor (scale [2 1 2 2 1 2 2]))
+(def blues (scale [3 2 1 1 3 2]))
+(def pentatonic (scale [3 2 2 3 2]))
+(def chromatic (scale [1]))
+
+
+(defn row_pentatonic []
+  (even-melody
+    (map
+      (comp C sharp pentatonic)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+
+(defn row_chromatic []
+  (even-melody
+    (map
+      (comp C sharp chromatic)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+
+(defn row_major []
+  (even-melody
+    (map
+      (comp C sharp major)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+
+(defn row_minor []
+  (even-melody
+    (map
+      (comp C sharp minor)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+(defn row_blues []
+  (even-melody
+    (map
+      (comp C sharp blues)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+
+(comment
+  (even-melody
+    (map
+      (comp C sharp major)
+      (concat (range 0 8) (reverse (range 0 7)))))
+
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Melody                                                    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def row-row-row-your-boat
+  (let [pitches
+         [0 0 0 1 2
+          ; Row, row, row your boat,
+          2 1 2 3 4
+          ; Gently down the stream,
+          7 7 7 4 4 4 2 2 2 0 0 0
+          ; (take 4 (repeat "merrily"))
+          4 3 2 1 0]
+          ; Life is but a dream!
+        durations
+         [1 1 2/3 1/3 1
+          2/3 1/3 2/3 1/3 2
+          1/3 1/3 1/3 1/3 1/3 1/3 1/3 1/3 1/3 1/3 1/3 1/3
+          2/3 1/3 2/3 1/3 2]
+        times (reductions + 0 durations)]
+      (map note times pitches)))
+
+
+
+  (def smoke-on-the-water
+        (let [pitches
+          [1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 5 6 4 1 1 ]
+              durations
+              [1/2 1/2 1/2 1/2 1/3 1/3 1/2 1/2 1/2 1/3 1/3 1/3 1/4 1/4 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 1/3 1/3 1/4 1/4 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/2 1/3 ]
+              times (reductions + 0 durations)]
+            (map note times pitches)))
+
+
+
+(comment
+  row-row-row-your-boat
+)
+
+(defn bpm [beats] (fn [beat] (/ (* beat 60 1000) beats)))
+
+(defn -main "Main" []
+
+  (->> smoke-on-the-water
+    (where :time (bpm 90))
+    (where :pitch (comp C major))
+    play)
+
+)
+
+(defn run [[from & tos]]
+  (if-let [to (first tos)]
+    (let [up-or-down (if (<= from to)
+                       (range from to)
+                       (reverse (range (inc to) (inc from))))]
+      (concat up-or-down (run tos)))
+    [from]))
+
+(comment
+  (even-melody (map (comp G major)
+                     (run [0 4 -1 1 0])
+                     ))
+
+)
+
+(defn accumulate [series]
+  (map (partial sum-n series) (range (count series))))
+(def repeats (partial mapcat #(apply repeat %)))
+(def runs (partial mapcat run))
+
+(def melody
+  (let [call
+          [(repeats [[2 1/4] [1 1/2] [14 1/4] [1 3/2]])
+          (runs [[0 -1 3 0] [4] [1 8]])]
+        response
+          [(repeats [[10 1/4] [1 1/2] [2 1/4] [1 9/4]])
+          (runs [[7 -1 0] [0 -3]])]
+        development
+          [(repeats [[1 3/4] [12 1/4] [1 1/2] [1 1] [1 1/2]
+                 [12 1/4] [1 3]])
+          (runs [[4] [4] [2 -3] [-1 -2] [0] [3 5] [1] [1] [1 2]
+                 [-1 1 -1] [5 0]])]
+        [durations pitches]
+          (map concat call response development)
+        times (map (from 1/2) (accumulate durations))]
+      (map note times pitches)))
+
+(def bass
+  (let [triples (partial mapcat #(repeat 3 %))]
+    (->>
+      (map note
+        (accumulate (repeats [[21 1] [13 1/4]]))
+        (concat
+          (triples (runs [[-7 -10] [-12 -10]]))
+          (runs [[5 0] [6 0]])))
+      (where :part (constantly :bass)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Canon                                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn canon [f notes] (concat notes (f notes)))
+
+; varieties of canon
+(defn simple [wait]
+  (fn [notes] (->> notes (where :time (from wait)))))
+
+(defn interval [interval]
+  (fn [notes] (->> notes (where :pitch (from interval)))))
+
+(def mirror (fn [notes] (->> notes (where :pitch -))))
+(def crab (fn [notes] (->> notes (where :time -))))
+(def table (comp mirror crab))
+
+; round
+(comment
+  (->> row-row-row-your-boat
+    (canon (simple 4))
+    (where :pitch (comp C major))
+    (where :time (bpm 90))
+    play)
+
+  (defn canon [f notes]
+    (->> notes
+      f
+      (where :part (constantly :follower))
+      (concat notes)))
+
+)
+
+; canone alla quarta, by johann sebastian bach
+(defn canone-alla-quarta [notes]
+  (canon
+    (comp (interval -3) mirror (simple 3))
+    notes))
+
+(comment
+  (->> melody
+    canone-alla-quarta
+    (concat bass)
+    (where :pitch (comp G major))
+    (where :time (bpm 90))
+    play
+    #_graph)
+
+)
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Graphing                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn graph [points]
+  (let [highlow (fn [k]
+                  (let [values (map k points)]
+                    [(apply max values)
+                     (apply min values)]))
+        [max-x min-x] (highlow :time)
+        [max-y min-y] (highlow :pitch)
+
+        adjust (fn [k high low points]
+                 (->> points
+                   (where k (from (- low)))
+                   (where k #(/ % (- high low)))))
+        normalise (fn [points]
+                    (->> points
+                      (filter #(< (:time %) (now)))
+                      (adjust :time max-x min-x)
+                      (adjust :pitch max-y min-y)))]
+
+    (sketch
+      :title "Time vs pitch"
+      :target :perm-frame
+      :setup (fn [] (smooth) (frame-rate 20) (background 200))
+      :draw  (fn []
+               (let [colours
+                       (fnil {:leader [190 90 90]
+                              :follower [10 10 80]
+                              :bass [70 130 70]}
+                             :leader)]
+                 (doseq [{x :time y :pitch voice :part}
+                         (normalise points)]
+                   (stroke-weight 5)
+                   (fill 255)
+                   (apply stroke (colours voice))
+                   (ellipse
+                     (* (width) x)
+                     (- (* 2/3 (height)) (* 1/3 (height) y))
+                     10 10))))
+      :size [1024 768])
+    points))
